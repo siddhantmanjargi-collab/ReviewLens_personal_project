@@ -1,0 +1,305 @@
+{
+ "_how_to_use": "Fill in a link and productName for each row (brand optional) using products YOU open on amazon.in or flipkart.com. Copy the full address from the browser (Flipkart links must contain ?pid=). Delete rows you do not use. Then send the whole file as the body of POST /api/import-links with the x-admin-key header. Rows left blank are rejected, not stored. Do not guess links.",
+ "items": [
+  {
+   "category": "Smartphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Laptops",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Laptops",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Laptops",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Laptops",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Laptops",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Earbuds and headphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Earbuds and headphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Earbuds and headphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Earbuds and headphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Earbuds and headphones",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartwatches and bands",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartwatches and bands",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartwatches and bands",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartwatches and bands",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Smartwatches and bands",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Televisions",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Televisions",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Televisions",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Televisions",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Televisions",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Kitchen appliances (mixers, air fryers)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Kitchen appliances (mixers, air fryers)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Kitchen appliances (mixers, air fryers)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Kitchen appliances (mixers, air fryers)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Kitchen appliances (mixers, air fryers)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Home appliances (fans, geysers, irons)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Home appliances (fans, geysers, irons)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Home appliances (fans, geysers, irons)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Home appliances (fans, geysers, irons)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Home appliances (fans, geysers, irons)",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Cameras and accessories",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Cameras and accessories",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Cameras and accessories",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Cameras and accessories",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Cameras and accessories",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Fitness and sports gear",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Fitness and sports gear",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Fitness and sports gear",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Fitness and sports gear",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Fitness and sports gear",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Personal care and grooming",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Personal care and grooming",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Personal care and grooming",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Personal care and grooming",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  },
+  {
+   "category": "Personal care and grooming",
+   "link": "",
+   "productName": "",
+   "brand": ""
+  }
+ ]
+}
