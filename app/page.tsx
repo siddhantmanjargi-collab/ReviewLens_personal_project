@@ -148,34 +148,39 @@ export default function StorefrontPage() {
 
     (async () => {
       try {
-        const headers: Record<string, string> = {};
         if (storedToken) {
-          headers.Authorization = `Bearer ${storedToken}`;
-        }
-        const res = await fetch("/api/auth/me", {
-          cache: "no-store",
-          credentials: "include",
-          headers,
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!cancelled) {
-          setSupabaseConfigured(Boolean(data?.supabaseConfigured));
-        }
-        if (!cancelled && data?.authenticated && data?.user) {
-          const user = data.user as AuthenticatedSessionUser;
-          const nextShortlist = Array.isArray(user.shortlistIds) ? user.shortlistIds.slice(0, 50) : [];
-          const nextCompare = Array.isArray(user.compareIds) ? user.compareIds.slice(0, 4) : [];
-          lastSyncedSignatureRef.current = `${user.id}|${nextShortlist.join(",")}|${nextCompare.join(",")}`;
-          setShortlistIds(nextShortlist);
-          setCompareIds(nextCompare);
-          setAuthUser(user);
-          try {
-            window.localStorage.setItem("rl_shortlist_ids", JSON.stringify(nextShortlist));
-            window.localStorage.setItem("rl_compare_ids", JSON.stringify(nextCompare));
-          } catch {}
+          const headers: Record<string, string> = {
+            Authorization: `Bearer ${storedToken}`,
+          };
+          const res = await fetch("/api/auth/me", {
+            cache: "no-store",
+            credentials: "include",
+            headers,
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!cancelled) {
+            setSupabaseConfigured(Boolean(data?.supabaseConfigured));
+          }
+          if (!cancelled && data?.authenticated && data?.user) {
+            const user = data.user as AuthenticatedSessionUser;
+            const nextShortlist = Array.isArray(user.shortlistIds) ? user.shortlistIds.slice(0, 50) : [];
+            const nextCompare = Array.isArray(user.compareIds) ? user.compareIds.slice(0, 4) : [];
+            lastSyncedSignatureRef.current = `${user.id}|${nextShortlist.join(",")}|${nextCompare.join(",")}`;
+            setShortlistIds(nextShortlist);
+            setCompareIds(nextCompare);
+            setAuthUser(user);
+            try {
+              window.localStorage.setItem("rl_shortlist_ids", JSON.stringify(nextShortlist));
+              window.localStorage.setItem("rl_compare_ids", JSON.stringify(nextCompare));
+            } catch {}
+          } else if (!cancelled) {
+            setAuthUser(null);
+          }
+        } else if (!cancelled) {
+          setAuthUser(null);
         }
       } catch {
-        // Treat transient network error on bootstrap as signed out
+        if (!cancelled) setAuthUser(null);
       } finally {
         if (!cancelled) {
           setAuthChecking(false);
