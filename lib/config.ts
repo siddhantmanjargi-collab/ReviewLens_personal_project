@@ -40,13 +40,13 @@ export function getAnalysisConfig(env: Record<string, string | undefined> = proc
   missing: string[];
   fallbackReason?: GeminiFallbackReason;
 } {
-  const rawKey = env.GEMINI_API_KEY;
+  const rawKey = env.Review_lens_api_key || env.REVIEW_LENS_API_KEY || env.GEMINI_API_KEY;
   const model = env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL;
   const keyFallbackReason = getGeminiKeyFallbackReason(rawKey);
   if (keyFallbackReason !== null) {
     return {
       config: null,
-      missing: ["GEMINI_API_KEY"],
+      missing: ["Review_lens_api_key"],
       fallbackReason: keyFallbackReason,
     };
   }
