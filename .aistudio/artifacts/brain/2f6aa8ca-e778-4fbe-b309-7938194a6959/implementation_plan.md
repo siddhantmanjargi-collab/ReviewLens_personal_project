@@ -1,116 +1,143 @@
-# Resilient Gemini Key Validation & Local Claim Cross-Check
+# ReviewLens — Full-App Username & Password Login with Synced Shortlist & Comparisons
 
-Eliminates server-side `API_KEY_INVALID` runtime errors when `GEMINI_API_KEY` is missing, placeholder-populated, or rejected by Google servers, while upgrading offline Buyer Claim Fact-Checking to cross-verify reviewer claims against both hardware specifications and aspect-level buyer sentiment.
+Add a dedicated username and password authentication gate that protects the entire ReviewLens application while automatically syncing each signed-in user's saved shortlist and product comparison tray to the server—with zero user profile management overhead.
 
-### User Review & Critical Decisions
+## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> Both product behavior choices were confirmed during Phase 1 clarification and govern how every Gemini-backed workflow behaves when live credentials are unavailable.
+> Updated per your feedback: **all user profile features (display names, role titles, profile editing modals, and profile endpoints) have been completely removed**. The scope now focuses strictly on username/password login, full-app protection, and server-synced shortlists and comparisons.
 
-- **Confirmed Decision 1 — Missing or Invalid Key Behavior**: **Seamless local fallback with subtle Secrets hint**. All workflows (Buyer Claim Fact-Check, Single & Batch Review Forensics, and Live Evaluation Pass) complete without throwing server-log `ApiError` exceptions, and render a quiet, non-blocking inline note pointing to **Settings > Secrets** when live Gemini grounding is inactive.
-- **Confirmed Decision 2 — Offline Buyer Claim Fact-Check Strategy**: **Cross-check specs and review sentiment locally**. Instead of marking every claim corroborated by default, the local verifier cross-examines extracted reviewer claims against structured product specifications, trusted aspect polarity ratios, and star-to-prose mismatch signals to assign realistic **Corroborated**, **Nuanced**, or **Disputed** verdicts.
-
----
-
-### 1. Overview & Core Concept
-
-- **What It Does**:
-  - Sanitizes `GEMINI_API_KEY` on the server before initializing `@google/genai` (stripping accidental quotes/whitespace and rejecting placeholder strings) and trips an automatic key-scoped circuit breaker on `API_KEY_INVALID` (400) or `PERMISSION_DENIED` (403) so invalid keys never trigger multi-model retry storms or raw `ApiError` stderr dumps.
-  - Replaces the static fallback in Buyer Claim Fact-Check with a deterministic specification-and-sentiment cross-checker that evaluates hardware claims against catalog specs and aggregated buyer sentiment.
-  - Surfaces structured fallback reason metadata to the UI so users see a calm, single-line status hint referencing **Settings > Secrets** without any modal interruptions or key-entry forms.
-- **Target Audience / Persona**: Shoppers, product analysts, and portfolio reviewers auditing e-commerce product authenticity, aspect sentiment, and hardware claims—whether or not a live Gemini API key is attached in the preview environment.
-- **Key Value**: Zero noisy runtime errors in server logs, instant fallback latency (no wasted retries on bad credentials), automatic recovery the moment a valid key is selected in **Settings > Secrets**, and genuinely informative fact-check verdicts in offline mode.
+- **Confirmed Decision — Authentication Method**: Simple **username and password** sign-in and account registration (`Username` + `Password` only), secured with server-side salted `scrypt` password hashing and HMAC-signed session tokens.
+- **Confirmed Decision — Access Protection Scope**: **Full-application authentication gate**. Unauthenticated visitors land directly on the ReviewLens sign-in screen; all storefront browsing, product inspections, comparison matrices, benchmark evaluations, and Review Lab tools unlock immediately upon sign-in.
+- **Confirmed Decision — Synced Workspace Scope (No User Profile)**: **Server-synced shortlist and product comparisons only**. Toggling shortlisted products and building up to a 4-item comparison set sync automatically to the signed-in account across sessions and browsers, with no user profile fields or profile settings UI.
+- **Recommended Convenience Default — Instant Sign-Up & Demo Quick-Fill**: Alongside creating any custom username and password account, the login card includes a one-click **"Fill Demo Credentials"** helper (`analyst`) so anyone evaluating ReviewLens can test the protected workspace immediately without inventing credentials.
 
 ---
 
-### 2. User Experience & Visual Design
+## 1. Overview & Core Concept
 
-- **Key User Flows**:
-  1. **Buyer Claim Fact-Check (Product Detail Modal -> Fact-Check Tab)**:
-     - User clicks **Verify Buyer Claims via Google Search**.
-     - If a valid `GEMINI_API_KEY` is active, Gemini runs live Google Search grounding (`gemini-3.8-flash`) and cites external web sources.
-     - If the key is unset, a placeholder, or rejected (`API_KEY_INVALID`), the server immediately switches to the **Catalog Spec & Review Sentiment Cross-Checker**, returning 3–4 concrete buyer claims scored as **Corroborated**, **Nuanced**, or **Disputed** alongside official manufacturer and Amazon listing links, plus a quiet inline note explaining that live web grounding activates once a valid `GEMINI_API_KEY` is configured in **Settings > Secrets**.
-  2. **Review Forensics Lab (Batch Segregation & Single Review Inspector)**:
-     - Submitting a single review or 60-review batch runs seamlessly with deterministic 6-signal heuristics and 3-gram Jaccard clone detection when Gemini is offline, displaying a subtle status line under the engine header noting when local heuristics were used due to an unconfigured or invalid `GEMINI_API_KEY` in **Settings > Secrets**.
-  3. **Evaluation Suite (Live Gemini Verification Pass)**:
-     - Clicking **Run Live Gemini Verification Pass** when the key is invalid or absent completes cleanly without server warnings, preserves the 40-sample ablation metrics, and displays a concise inline notice near the calibration bar indicating why reference scores remain active and how to enable live pass execution via **Settings > Secrets**.
-
-- **Visual Identity & Theme**:
-  - *Aesthetic Direction*: High-density enterprise analytics & SaaS forensics console—authoritative, restrained, and data-first.
-  - *Color Palette & Mood*: Crisp neutral canvas (`bg-white` / `dark:bg-slate-900`, structural `bg-slate-50` / `dark:bg-slate-950`) with a disciplined 10% `amber-400` primary action accent and semantic verdict tones (`emerald` for corroborated/genuine, `amber` for nuanced/mismatch, `rose` for disputed/suspicious) paired with explicit uppercase text labels.
-  - *Typography & Hierarchy*: Clean sans-serif UI hierarchy paired with monospace tabular figures (`font-mono tabular-nums`) for risk percentages, star deltas, cache hit counters, and timestamps. Metadata and engine notices use quiet unboxed inline text with middle-dot (`·`) separators—no decorative status dots, no thick left borders, and strictly no API key input fields.
-  - *Component Styling & Layout*: Single-elevation flat containers with subtle 1px hairline borders (`border-slate-200 dark:border-slate-800`) and consistent internal spacing.
-
-- **Interactive Feedback & Motion**:
-  - Button loading states settle immediately once the circuit breaker short-circuits an invalid key (~5ms instead of multi-second retries), eliminating perceived UI lag.
+- **What It Does**: Introduces a clean authentication gate, username/password sign-in and registration screen, cryptographic session layer, and server-synced shortlist and comparison storage for ReviewLens. Users sign in or register with just a username and password to unlock the 30-product Indian marketplace directory, shill-ring forensic graph, claim verifier, and Review Lab, while keeping their saved shortlist and comparison selections persisted to their account.
+- **Target Audience / Persona**: Shoppers, e-commerce analysts, and portfolio reviewers who want authenticated access and persistent product shortlists and side-by-side comparisons across sessions without unnecessary profile setup friction.
+- **Key Value**: Upgrades ReviewLens from an anonymous single-browser demo into a stateful, multi-user product intelligence workspace with real credential verification, full-app route/workspace protection, and seamless shortlist and comparison synchronization.
 
 ---
 
-### 3. Key Product Decisions & Trade-Offs
+## 2. User Experience & Visual Design
 
-- **Decision 1: Key-Scoped In-Memory Circuit Breaker with Pre-Flight Sanitization**
-  - *Chosen Approach*: Normalize `GEMINI_API_KEY` (trim whitespace and wrapping quotes, reject known placeholder patterns and malformed tokens) before SDK invocation. If `@google/genai` returns `API_KEY_INVALID` (400) or `PERMISSION_DENIED` (403), immediately abort model fallback loops and record a fingerprint of that exact key string as invalid in server memory. If the user later updates `GEMINI_API_KEY` in **Settings > Secrets**, the fingerprint changes and live calls automatically resume without a server restart.
-  - *Why*: Eliminates redundant retries across secondary models (`gemini-flash-latest`, `gemini-3.1-flash-lite`) when the credential itself is invalid, prevents repeated 400 errors on subsequent clicks, and recovers seamlessly when Secrets are updated.
-  - *Alternatives Considered*: Retrying alternate models on 400 errors (wastes latency and multiplies error logs when the failure reason is `API_KEY_INVALID` rather than an unsupported model parameter).
+### Key User Flows
 
-- **Decision 2: Structured Diagnostic Summaries Instead of Raw `ApiError` Console Dumps**
-  - *Chosen Approach*: Classify Gemini exceptions into typed diagnostic categories (`missing_or_invalid_api_key`, `quota_exceeded`, `service_unavailable`) and return that clean status field in the JSON response payload rather than passing raw `ApiError` JSON blobs to `console.warn`.
-  - *Why*: Raw `ApiError` stack traces in server logs trigger false-positive platform crash alerts even when the endpoint handled the fallback gracefully with HTTP 200.
+1. **Arrival & Session Check**:
+   - On initial load, a lightweight session check verifies whether an active authenticated session exists. While resolving, a crisp minimal skeleton matching the ReviewLens canvas prevents any flash of unauthenticated content.
+   - If unauthenticated, the full-viewport **ReviewLens Sign In & Create Account Screen** renders immediately.
+2. **Sign In & Account Registration (`Username` + `Password` Only)**:
+   - Users switch cleanly between **Sign In** and **Create Account** segmented tabs at the top of the authentication card.
+   - **Sign In**: Accepts `Username` and `Password` (with a show/hide password visibility toggle), validates inputs inline, and transitions straight into the storefront workspace on success. Includes a subtle one-click **"Fill Demo Credentials"** helper for rapid evaluation.
+   - **Create Account**: Accepts strictly `Username` (3–24 characters, alphanumeric/underscores) and `Password` (minimum 6 characters)—no profile names, avatars, or extra fields—creates the hashed account on the server, carries over any existing local shortlist or comparison items, and signs the user in automatically.
+3. **Synced Shortlist & Comparison Workflow**:
+   - Once signed in, adding or removing products from the **Shortlist** or **Compare (up to 4)** tray updates the UI optimistically in `<50ms` and syncs asynchronously in the background to the user's server record.
+4. **Session Indicator & Sign Out**:
+   - Inside the workspace, a compact session control displays the signed-in `@username` handle alongside a direct **Sign Out** button—no profile drawers, settings modals, or profile forms.
+   - Clicking **Sign Out** clears the server session cookie and client session token, resets active user state cleanly, and returns smoothly to the Sign In screen.
 
-- **Decision 3: Multi-Signal Local Claim Cross-Verification**
-  - *Chosen Approach*: Match extracted buyer claims and product aspects against catalog specification key-values (battery capacity/endurance, refresh rate/display type, processor/thermals, weight/build, ANC/audio codecs, charging wattage) and compare against trusted-vs-suspicious review sentiment ratios:
-    - **Corroborated**: Buyer claim aligns with published spec metrics and strong positive consensus among low-risk reviews ($\ge 65\%$ positive).
-    - **Nuanced**: Spec sheet confirms the hardware capability, but verified owner reviews document real-world trade-offs or mixed aspect polarity ($25\%\text{–}55\%$ negative mentions, e.g., high brightness paired with warm thermals or heavy chassis).
-    - **Disputed**: Claim contradicts verified hardware specifications (e.g., claiming features absent from the spec sheet or exaggerated spam superlatives) or faces majority negative defect reports ($> 55\%$ negative aspect consensus).
-  - *Why*: Delivers genuine analytical value grounded in the app's 30-product hardware catalog and 180-review dataset whenever live web search is offline.
+### Visual Identity & Theme
+
+- **Aesthetic Direction**: Structured e-commerce & forensic SaaS editorial aesthetic matching ReviewLens's existing visual DNA—clean architectural geometry, crisp hairline borders, zero decorative clutter, and authoritative marketplace trust cues.
+- **Color Palette & Mood (60-30-10 Discipline)**:
+  - *60% Dominant Neutral Canvas*: Soft off-white `#FAFAFA` (`bg-[#FAFAFA]`) in light mode; deep slate `#020617` (`dark:bg-slate-950`) in dark mode.
+  - *30% Structural Surfaces*: Pure white `#FFFFFF` (`bg-white`) and slate `#0F172A` (`dark:bg-slate-900`) panels separated by 1px hairline borders (`border-slate-200 dark:border-slate-800`), strictly single-elevation depth (no cards nested inside cards, no thick left borders).
+  - *10% High-Intent Accent*: Warm marketplace amber (`bg-amber-400 text-slate-950` / `text-amber-700 dark:text-amber-400`) and deep charcoal (`bg-slate-900 text-white`) reserved strictly for primary CTAs, active segmented tabs, and focus rings. Semantic crimson (`text-red-600 dark:text-red-400`) paired with explicit text explanations for validation errors.
+- **Typography & Hierarchy**:
+  - *Display & UI Prose*: `Plus Jakarta Sans` (`--font-sans`) in Regular (400), SemiBold (600), and Bold (700), with `text-wrap: balance` on display headlines to prevent orphan words.
+  - *Metrics, Usernames & Counts*: `JetBrains Mono` (`--font-mono`) and `tabular-nums` for catalog metrics (`30 Products · 180 Audited Reviews`), `@username` handles, and synced shortlist/comparison counters.
+- **Component Styling & Spatial Layout**:
+  - **2-Column Balanced Desktop Login Split (`1440px` baseline)**:
+    - *Left Column (Showcase Panel, `lg:col-span-7`)*: Brand wordmark, balanced editorial headline explaining ReviewLens's verified Indian marketplace intelligence, unboxed typographic proof line (`30 Verified Products · 10 Departments · Shill-Ring Forensics`), and high-resolution hardware showcase photography with a measured contrast scrim.
+    - *Right Column (Authentication Module, `lg:col-span-5`)*: Clean, vertically centered authentication card with generous `p-8` outer padding, segmented `Sign In | Create Account` control, accessible `>= 44px` `Username` and `Password` fields, password visibility button, primary submit CTA, and demo quick-fill button.
+  - **Top Bar Contract Compliance**: Keeps the top navigation bar strictly single-row (`whitespace-nowrap shrink-0`) with the signed-in `@username` indicator and **Sign Out** action cleanly integrated without adding extra rows or profile menus.
+
+### Interactive Feedback & Motion
+
+- **Routine Latency Budget (`<= 180ms`)**: Compositor-only `opacity` and `transform` transitions via `motion/react` when switching between Sign In / Create Account tabs or transitioning from the Login Gate into the Storefront.
+- **Explicit Loading, Error & Sync States**: Submit buttons lock against double-submission with inline status text (`Signing in...` / `Creating account...`); credential mismatches display clear, accessible inline messages (`Invalid username or password`) without browser alerts; shortlist and comparison changes persist silently in the background.
 
 ---
 
-### 4. Technical Architecture & Data Strategy *(Technical Reference)*
+## 3. Key Product Decisions & Trade-Offs
 
-- **Architecture & Component Diagram**:
+- **Decision 1: Self-Contained Cryptographic Username/Password Auth vs. External OAuth Providers**
+  - *Chosen Approach*: Server-side username/password authentication using Node's native `crypto.scrypt` password derivation and HMAC-SHA256 signed session tokens, paired with dual cookie (`SameSite=None; Secure; HttpOnly` on HTTPS) + `Authorization: Bearer` header fallback.
+  - *Why*: Directly fulfills the request for simple username and password login with zero extra profile fields, OAuth popups, or email verification steps—and guarantees 100% session reliability inside embedded preview iframes even when browsers block third-party cookies.
+  - *Alternatives Considered*: Firebase Auth (provisions Google Sign-In rather than plain username/password) and client-only `localStorage` mock login (insecure and does not persist shortlists/comparisons on the server).
+- **Decision 2: Hybrid Cloud + Durable Server Persistence for Accounts, Shortlists & Comparisons**
+  - *Chosen Approach*: Extend ReviewLens's repository layer with a lightweight User & Sync Store that persists accounts, `shortlistIds`, and `compareIds` to Supabase when configured and falls back seamlessly to durable server-side JSON storage, pre-seeded with a ready-to-use `analyst` demo account.
+  - *Why*: Matches ReviewLens's existing hybrid persistence architecture so accounts, shortlists, and comparisons work out of the box with zero external database setup required, while scaling cleanly to cloud Postgres when environment credentials are present.
+- **Decision 3: Optimistic UI Updates with Debounced Server Sync**
+  - *Chosen Approach*: Update `shortlistIds` and `compareIds` immediately in React state while dispatching a `250ms` debounced background sync request to the server sync route.
+  - *Why*: Preserves instant `0ms` storefront responsiveness when toggling shortlist or compare buttons across product cards while keeping server state synchronized.
 
-```
+---
+
+## 4. Technical Architecture & Data Strategy *(Technical Reference)*
+
+### Architecture & Component Diagram
+
+```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                     Environment & Key Guard Layer                            │
-│  process.env.GEMINI_API_KEY ──► Pre-Flight Sanitizer (trim, placeholder ban) │
-│                                        │                                     │
-│                                        ▼                                     │
-│                         Key-Fingerprint Circuit Breaker                      │
-│               (Short-circuits 400 API_KEY_INVALID / 403 Auth)                │
-└───────────────────┬──────────────────────────────────────┬───────────────────┘
-                    │ Valid & Healthy Key                  │ Missing / Tripped Key
-                    ▼                                      ▼
-┌───────────────────────────────────────┐  ┌───────────────────────────────────┐
-│      Live @google/genai Execution     │  │   Deterministic Local Engines     │
-│ • gemini-3.8-flash + Google Search    │  │ • Spec + Aspect Claim Verifier    │
-│ • Structured JSON Review Analyzer     │  │ • 6-Signal Heuristic Detector     │
-│ • SHA-256 Content-Hash Cache          │  │ • 3-Gram Shingle Clone Graph      │
-└───────────────────┬───────────────────┘  └───────────────┬───────────────────┘
-                    └──────────────────┬───────────────────┘
-                                       ▼
+│                         Client Application (React)                           │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ AuthProvider & Full-App Session Gate                                   │  │
+│  │  • Bootstraps session on mount (/api/auth/me)                          │  │
+│  │  • Holds authenticated username, session token & auth actions          │  │
+│  └───────────────────┬────────────────────────────────────┬───────────────┘  │
+│                      │ (Unauthenticated)                  │ (Authenticated)  │
+│                      ▼                                    ▼                  │
+│  ┌───────────────────────────────────┐  ┌─────────────────────────────────┐  │
+│  │ Login & Registration Screen       │  │ Protected Storefront Workspace  │  │
+│  │  • 2-Col Editorial Showcase Split │  │  • Header (@username + Sign Out)│  │
+│  │  • Sign In / Create Account Tabs  │  │  • Synced Shortlist (<=50 IDs)  │  │
+│  │  • Username + Password Validation │  │  • Synced Compare (<=4 IDs)     │  │
+│  │  • 1-Click Demo Credentials Fill  │  │  • Catalog, Benchmarks & Lab    │  │
+│  └───────────────────┬───────────────┘  └─────────────────┬───────────────┘  │
+└──────────────────────┼────────────────────────────────────┼──────────────────┘
+                       │ POST /api/auth/login               │ GET / PUT
+                       │ POST /api/auth/register            │ /api/user/sync
+                       │ POST /api/auth/logout              │
+                       ▼                                    ▼
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                Server API Routes (Clean HTTP 200 + Fallback Status)          │
-│  POST /api/verify-claims  │  POST /api/test-review  │  POST /api/evaluation  │
-│                           │  POST /api/segregate-batch                       │
-└───────────────────────────┴──────────────┬───────────────────────────────────┘
-                                           ▼
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                    Client Diagnostic Views (Subtle Secrets Hint)             │
-│  ┌────────────────────────┐ ┌──────────────────────┐ ┌─────────────────────┐ │
-│  │ Product Detail Modal   │ │ Review Forensics Lab │ │ Evaluation Suite    │ │
-│  │ • Fact-Check Verdicts  │ │ • Batch Segregator   │ │ • Live Pass Notice  │ │
-│  │ • Spec + Review Proof  │ │ • Single Inspector   │ │ • 40-Sample Metrics │ │
-│  └────────────────────────┘ └──────────────────────┘ └─────────────────────┘ │
+│                     Next.js Server API & Auth Layer                          │
+│                                                                              │
+│  ┌───────────────────────────────────┐  ┌─────────────────────────────────┐  │
+│  │ Session & Crypto Engine           │  │ User & Synced Lists Store       │  │
+│  │  • scrypt + 16B salt pwd hashing  │  │  • Unique normalized usernames  │  │
+│  │  • timingSafeEqual verification   │  │  • Synced shortlistIds (<=50)   │  │
+│  │  • HMAC-SHA256 signed tokens      │  │  • Synced compareIds (<=4)      │  │
+│  │  • Iframe-safe Cookie + Bearer    │  │  • Zero profile metadata bloat  │  │
+│  └───────────────────────────────────┘  └─────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Data Model & State**:
-  - **Fallback Reason Enum**: `"missing_api_key" | "invalid_api_key" | "quota_exceeded" | "service_unavailable"` attached optionally as `fallbackReason` on API payloads when `grounded: false` or `aiPowered: false`.
-  - **Key Circuit Breaker Store**: Server-global `Set<string>` storing SHA-256 fingerprints of rejected API keys during the current process lifetime so raw secret strings are never stored in plain text or leaked in payloads, and any newly injected key is automatically tested fresh.
-  - **Claim Verification Report**: Preserves `{ productName, grounded, model, summary, claims, sources, checkedAt }` and adds optional `fallbackReason` so existing consumers remain 100% backward-compatible.
+### Data Model & State
 
-- **Interactive Component & State Mapping**:
-  - **Fact-Check Tab (`ProductDetailModal`)**: Clicking **Verify Buyer Claims** sets loading state, calls `POST /api/verify-claims`, renders claim cards with semantic verdict labels (`CORROBORATED` / `NUANCED` / `DISPUTED`) and spec-plus-sentiment evidence prose, and conditionally displays a single-line hint referencing **Settings > Secrets** when `fallbackReason` indicates a missing or invalid key.
-  - **Batch & Single Forensics (`ReviewTesterSection`)**: Running batch segregation or single-review evaluation updates `batchResult` / `singleResult`; when `aiPowered === false` and `fallbackReason` is key-related, displays a concise inline note alongside the engine indicator without obscuring risk breakdowns or export actions.
-  - **Ablation Benchmark (`EvaluationSection`)**: Clicking **Run Live Gemini Verification Pass** invokes `POST /api/evaluation`; if `mode` remains `"reference"` due to a key issue, sets a clean status banner below the calibration bar explaining that reference labels remain active until a valid `GEMINI_API_KEY` is selected in **Settings > Secrets**.
+- **User Account Entity (Strictly Minimal)**:
+  - `id`: Deterministic/UUID user identifier
+  - `username`: Normalized lowercase handle (`^[a-z0-9_]{3,24}$`, unique)
+  - `passwordHash` & `passwordSalt`: Hex-encoded `scrypt` digest and 16-byte cryptographic salt (never returned to client)
+  - `shortlistIds`: Ordered array of shortlisted product IDs (max 50)
+  - `compareIds`: Ordered array of compared product IDs (max 4)
+  - `createdAt` & `updatedAt`: ISO-8601 timestamps
+- **Signed Session Token**:
+  - Compact HMAC-SHA256 signed payload (`userId`, `username`, `issuedAt`, `expiresAt` 7-day rolling window) verified using constant-time digest comparison. Delivered via both an `HttpOnly` cookie (`SameSite=None; Secure` on HTTPS, `SameSite=Lax` on local HTTP) and a client Bearer token fallback so embedded iframe previews never lose session state.
+
+### Interactive Component & State Mapping
+
+- **Login & Registration Screen**:
+  - *Mode Toggle*: Switches cleanly between `"login"` and `"register"`, clearing stale field errors while preserving typed `username`.
+  - *Input Validation*: Validates `username` format (`3–24` alphanumeric/underscore characters) and `password` length (`>= 6` characters) prior to submission; highlights invalid fields with accessible `aria-invalid` and inline helper text.
+  - *Demo Credentials Quick-Fill*: Populates pre-seeded `analyst` credentials for frictionless evaluation.
+  - *First-Signup Local Migration*: On account registration, reads any guest shortlist or comparison IDs present in browser storage and includes them in the initial registration payload so existing selections carry seamlessly into the new account.
+- **Session Control & Sign Out**:
+  - Displays the signed-in `@username` and a single-click **Sign Out** button that invalidates both the server session cookie and client token and returns immediately to the Login Screen.
+- **Synced Shortlist & Comparison State**:
+  - Hydrates `shortlistIds` and `compareIds` directly from the authenticated user's server record upon sign-in.
+  - Debounces rapid shortlist and comparison mutations (`250ms`) into `PUT /api/user/sync`, keeping server persistence synchronized without flooding network requests.

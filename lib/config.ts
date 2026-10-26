@@ -4,8 +4,11 @@ import {
   type GeminiFallbackReason,
 } from "./gemini";
 
+import { sanitizeSupabaseKey, sanitizeSupabaseUrl } from "./supabase/config";
+
 export interface AppConfig {
   supabaseUrl: string;
+  supabaseAnonKey: string;
   supabaseServiceRoleKey: string;
   adminApiKey: string;
   enableDirectPageCheck: boolean;
@@ -14,8 +17,10 @@ export interface AppConfig {
 /** Reads env lazily with default fallbacks for missing secrets in dev environment. Server-side only. */
 export function getConfig(env: Record<string, string | undefined> = process.env): AppConfig {
   return {
-    supabaseUrl: env.SUPABASE_URL ?? "",
-    supabaseServiceRoleKey: env.SUPABASE_SERVICE_ROLE_KEY ?? "",
+    supabaseUrl: sanitizeSupabaseUrl(env.SUPABASE_URL || env.NEXT_PUBLIC_SUPABASE_URL) ?? "",
+    supabaseAnonKey:
+      sanitizeSupabaseKey(env.NEXT_PUBLIC_SUPABASE_ANON_KEY || env.SUPABASE_ANON_KEY) ?? "",
+    supabaseServiceRoleKey: sanitizeSupabaseKey(env.SUPABASE_SERVICE_ROLE_KEY) ?? "",
     adminApiKey: env.ADMIN_API_KEY || "dev-admin-key",
     enableDirectPageCheck: env.ENABLE_DIRECT_PAGE_CHECK === "true",
   };

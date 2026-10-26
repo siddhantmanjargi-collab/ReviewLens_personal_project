@@ -1,9 +1,15 @@
 "use client";
 
 import React from "react";
-import { Moon, Sun } from "lucide-react";
+import { LogOut, Moon, Sun, User } from "lucide-react";
 
-export type ActiveSection = "catalog" | "compare" | "benchmarks" | "tester" | "shortlist";
+export type ActiveSection =
+  | "catalog"
+  | "compare"
+  | "benchmarks"
+  | "tester"
+  | "shortlist"
+  | "profile";
 
 interface HeaderProps {
   activeSection: ActiveSection;
@@ -13,6 +19,8 @@ interface HeaderProps {
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
   onOpenImport: () => void;
+  username: string;
+  onSignOut: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -23,6 +31,8 @@ export const Header: React.FC<HeaderProps> = ({
   isDarkMode,
   onToggleDarkMode,
   onOpenImport,
+  username,
+  onSignOut,
 }) => {
   const navItems: { id: ActiveSection; label: string }[] = [
     { id: "catalog", label: "Catalog" },
@@ -32,9 +42,11 @@ export const Header: React.FC<HeaderProps> = ({
     { id: "shortlist", label: shortlistCount > 0 ? `Shortlist (${shortlistCount})` : "Shortlist" },
   ];
 
+  const isProfileActive = activeSection === "profile";
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 transition-colors duration-150">
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-8">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 md:gap-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <button
           type="button"
@@ -65,24 +77,38 @@ export const Header: React.FC<HeaderProps> = ({
           })}
         </nav>
 
-        {/* Zone 3: Theme Toggle + Primary Action */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        {/* Zone 3: Buyer Profile Account Trigger + Theme + Primary Action + Sign Out */}
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <button
+            type="button"
+            onClick={() => setActiveSection("profile")}
+            title={`Open Buyer Profile (@${username})`}
+            className={`px-2.5 sm:px-3 py-2 text-xs font-semibold rounded-lg border inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500 ${
+              isProfileActive
+                ? "bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950 border-slate-900 dark:border-amber-400"
+                : "bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800"
+            }`}
+          >
+            <User className="w-3.5 h-3.5 shrink-0" />
+            <span className="font-mono max-w-[110px] truncate">@{username}</span>
+          </button>
+
           <button
             type="button"
             onClick={onToggleDarkMode}
             aria-label={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
             title={isDarkMode ? "Switch to light theme" : "Switch to dark theme"}
-            className="px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
+            className="px-2.5 sm:px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
           >
             {isDarkMode ? (
               <>
                 <Sun className="w-3.5 h-3.5 text-amber-400" />
-                <span>Light</span>
+                <span className="hidden lg:inline">Light</span>
               </>
             ) : (
               <>
                 <Moon className="w-3.5 h-3.5 text-slate-700" />
-                <span>Dark</span>
+                <span className="hidden lg:inline">Dark</span>
               </>
             )}
           </button>
@@ -90,9 +116,20 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={onOpenImport}
-            className="px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
+            className="px-3 sm:px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
           >
-            Add Product Link
+            <span className="hidden sm:inline">Add Product Link</span>
+            <span className="sm:hidden">Add Link</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={onSignOut}
+            title={`Sign out @${username}`}
+            className="px-2.5 sm:px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            <span className="hidden xl:inline">Sign Out</span>
           </button>
         </div>
       </div>

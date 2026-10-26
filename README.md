@@ -18,14 +18,15 @@ vercel.json  schedules the daily job
 
 ## Setup (no terminal)
 
-1. **Supabase SQL Editor:** run `0001_init.sql` if you have not already, then run `0002_phase2.sql` once.
+1. **Supabase SQL Editor:** run `0001_init.sql` if you have not already, then `0002_phase2.sql`, and finally `0003_auth_profiles_favorites.sql` (provisions `profiles`, relational `user_favorites`, Row-Level Security policies, auth signup trigger, and Realtime sync).
    (Supabase may warn about "destructive" statements. 0002 only drops and re-creates CHECK constraints; it deletes no rows.)
    If you ran the Phase 1 database before, nothing is lost: the empty tables are upgraded in place.
-2. **Vercel > Settings > Environment Variables** (names must match exactly), then redeploy:
+2. **Environment Variables** (names must match exactly), then redeploy:
 
 | Name | Value |
 |---|---|
-| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_API_KEY` | same as Phase 1 |
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Project URL & Anon Public Key for `@supabase/ssr` Auth + Realtime |
+| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_API_KEY` | Server-side Supabase & admin keys |
 | `GEMINI_API_KEY` | from Google AI Studio |
 | `GEMINI_MODEL` | a model name from AI Studio's model list (no default on purpose) |
 | `CRON_SECRET` | a new random string, 16+ characters |

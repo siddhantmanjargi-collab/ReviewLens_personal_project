@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -18,7 +18,11 @@ import {
   Square,
 } from "lucide-react";
 import type { ProductRecord, ReviewRecord } from "@/lib/types";
+import { computeBuyerProfile, computeForYouCatalogScores } from "@/lib/buyerProfile";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { Header, type ActiveSection } from "@/components/Header";
+import { LoginScreen, type AuthenticatedSessionUser } from "@/components/LoginScreen";
+import { BuyerProfileSection } from "@/components/BuyerProfileSection";
 import { ProductCard, type ProductSnapshotSummary } from "@/components/ProductCard";
 import { ProductDetailModal } from "@/components/ProductDetailModal";
 import { CompareSection } from "@/components/CompareSection";
@@ -26,6 +30,8 @@ import { ImportModal } from "@/components/ImportModal";
 import { ReviewTesterSection } from "@/components/ReviewTesterSection";
 import { EvaluationSection } from "@/components/EvaluationSection";
 import { heroShowcaseImg } from "@/components/ProductArtwork";
+
+const SESSION_TOKEN_STORAGE_KEY = "rl_session_token";
 
 interface CatalogItem {
   product: ProductRecord;
@@ -39,6 +45,7 @@ type RatingFilter = "all" | "4.0" | "4.5";
 type DiscountFilter = "all" | "15" | "30" | "50";
 type TrustFilter = "all" | "genuine_90" | "genuine_80" | "flagged";
 type SortOption =
+  | "for_you"
   | "popularity"
   | "price_asc"
   | "price_desc"
@@ -61,6 +68,11 @@ const CATEGORIES_ORDER = [
 ];
 
 export default function StorefrontPage() {
+  const [authChecking, setAuthChecking] = useState(true);
+  const [authUser, setAuthUser] = useState<AuthenticatedSessionUser | null>(null);
+  const [sessionToken, setSessionToken] = useState<string | null>(null);
+  const [supabaseConfigured, setSupabaseConfigured] = useState(false);
+
   const [activeSection, setActiveSection] = useState<ActiveSection>("catalog");
   const [catalogItems, setCatalogItems] = useState<CatalogItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -87,6 +99,8 @@ export default function StorefrontPage() {
   const [selectedProduct, setSelectedProduct] = useState<ProductRecord | null>(null);
   const [importModalOpen, setImportModalOpen] = useState(false);
 
+  const lastSyncedSignatureRef = useRef<string>("");
+
   const loadCatalog = useCallback(async () => {
     setLoading(true);
     try {
@@ -102,12 +116,11 @@ export default function StorefrontPage() {
     }
   }, []);
 
+  // Bootstrap saved theme, guest lists, and authenticated session on mount
   useEffect(() => {
-    loadCatalog();
-  }, [loadCatalog]);
+    let cancelled = false;
 
-  // Hydrate saved theme, shortlist & comparison tray from localStorage
-  useEffect(() => {
+    let storedToken: string | null = null;
     try {
       const savedTheme = window.localStorage.getItem("rl_theme");
       if (savedTheme === "dark") {
@@ -128,10 +141,235 @@ export default function StorefrontPage() {
         const parsed = JSON.parse(savedCompare);
         if (Array.isArray(parsed)) setCompareIds(parsed.slice(0, 4));
       }
+
+      storedToken = window.localStorage.getItem(SESSION_TOKEN_STORAGE_KEY);
+      if (storedToken) setSessionToken(storedToken);
     } catch {
       // Ignore storage access errors in restricted iframes
     }
+
+    (async () => {
+      try {
+        const headers: Record<string, string> = {};
+        if (storedToken) {
+          headers.Authorization = `Bearer ${storedToken}`;
+        }
+        const res = await fetch("/api/auth/me", {
+          cache: "no-store",
+          credentials: "include",
+          headers,
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!cancelled) {
+          setSupabaseConfigured(Boolean(data?.supabaseConfigured));
+        }
+        if (!cancelled && data?.authenticated && data?.user) {
+          const user = data.user as AuthenticatedSessionUser;
+          const nextShortlist = Array.isArray(user.shortlistIds) ? user.shortlistIds.slice(0, 50) : [];
+          const nextCompare = Array.isArray(user.compareIds) ? user.compareIds.slice(0, 4) : [];
+          lastSyncedSignatureRef.current = `${user.id}|${nextShortlist.join(",")}|${nextCompare.join(",")}`;
+          setShortlistIds(nextShortlist);
+          setCompareIds(nextCompare);
+          setAuthUser(user);
+          try {
+            window.localStorage.setItem("rl_shortlist_ids", JSON.stringify(nextShortlist));
+            window.localStorage.setItem("rl_compare_ids", JSON.stringify(nextCompare));
+          } catch {}
+        }
+      } catch {
+        // Treat transient network error on bootstrap as signed out
+      } finally {
+        if (!cancelled) {
+          setAuthChecking(false);
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  const authUserId = authUser?.id ?? "";
+
+  useEffect(() => {
+    if (!authUserId) return;
+    loadCatalog();
+  }, [authUserId, loadCatalog]);
+
+  const shortlistKey = shortlistIds.join(",");
+  const compareKey = compareIds.join(",");
+
+  // Debounced server sync whenever shortlistIds or compareIds change while signed in
+  useEffect(() => {
+    if (!authUserId) return;
+    const nextSignature = `${authUserId}|${shortlistKey}|${compareKey}`;
+    if (lastSyncedSignatureRef.current === nextSignature) return;
+
+    const timer = window.setTimeout(async () => {
+      const nextShortlist = shortlistKey ? shortlistKey.split(",") : [];
+      const nextCompare = compareKey ? compareKey.split(",") : [];
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (sessionToken) {
+        headers.Authorization = `Bearer ${sessionToken}`;
+      }
+      try {
+        const res = await fetch("/api/user/sync", {
+          method: "PUT",
+          credentials: "include",
+          headers,
+          body: JSON.stringify({
+            shortlistIds: nextShortlist,
+            compareIds: nextCompare,
+          }),
+        });
+        if (res.ok) {
+          lastSyncedSignatureRef.current = nextSignature;
+        }
+      } catch {
+        // Keep local optimistic state; next change will retry sync
+      }
+    }, 250);
+
+    return () => window.clearTimeout(timer);
+  }, [authUserId, shortlistKey, compareKey, sessionToken]);
+
+  const authProvider = authUser?.authProvider ?? "demo_local";
+
+  // Live Supabase Realtime subscription on public.user_favorites across tabs/devices
+  useEffect(() => {
+    if (!authUserId || authProvider !== "supabase") return;
+    const browserClient = createBrowserSupabaseClient();
+    if (!browserClient) return;
+
+    const channel = browserClient
+      .channel(`rl-favorites-${authUserId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "user_favorites",
+          filter: `user_id=eq.${authUserId}`,
+        },
+        async () => {
+          const headers: Record<string, string> = {};
+          if (sessionToken) headers.Authorization = `Bearer ${sessionToken}`;
+          try {
+            const res = await fetch("/api/user/sync", {
+              cache: "no-store",
+              credentials: "include",
+              headers,
+            });
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && data?.ok) {
+              const nextShortlist = Array.isArray(data.shortlistIds)
+                ? data.shortlistIds.slice(0, 50)
+                : [];
+              const nextCompare = Array.isArray(data.compareIds)
+                ? data.compareIds.slice(0, 4)
+                : [];
+              lastSyncedSignatureRef.current = `${authUserId}|${nextShortlist.join(",")}|${nextCompare.join(",")}`;
+              setShortlistIds(nextShortlist);
+              setCompareIds(nextCompare);
+            }
+          } catch {}
+        },
+      )
+      .subscribe();
+
+    return () => {
+      browserClient.removeChannel(channel);
+    };
+  }, [authUserId, authProvider, sessionToken]);
+
+  const handleAuthenticated = useCallback(
+    (user: AuthenticatedSessionUser, token: string | null, isSbConfigured?: boolean) => {
+      const nextShortlist = Array.isArray(user.shortlistIds) ? user.shortlistIds.slice(0, 50) : [];
+      const nextCompare = Array.isArray(user.compareIds) ? user.compareIds.slice(0, 4) : [];
+      lastSyncedSignatureRef.current = `${user.id}|${nextShortlist.join(",")}|${nextCompare.join(",")}`;
+      setShortlistIds(nextShortlist);
+      setCompareIds(nextCompare);
+      setSessionToken(token);
+      if (typeof isSbConfigured === "boolean") {
+        setSupabaseConfigured(isSbConfigured);
+      }
+      setAuthUser(user);
+      setActiveSection("catalog");
+      try {
+        if (token) {
+          window.localStorage.setItem(SESSION_TOKEN_STORAGE_KEY, token);
+        }
+        window.localStorage.setItem("rl_shortlist_ids", JSON.stringify(nextShortlist));
+        window.localStorage.setItem("rl_compare_ids", JSON.stringify(nextCompare));
+      } catch {}
+    },
+    [],
+  );
+
+  const handleUpdateProfilePreferences = useCallback(
+    async (prefs: {
+      displayName?: string;
+      mutedCategories?: string[];
+      strictTrustMode?: boolean;
+    }) => {
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (sessionToken) {
+        headers.Authorization = `Bearer ${sessionToken}`;
+      }
+      try {
+        const res = await fetch("/api/user/profile", {
+          method: "PATCH",
+          credentials: "include",
+          headers,
+          body: JSON.stringify(prefs),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data?.ok && data?.user) {
+          setAuthUser((prev) =>
+            prev
+              ? {
+                  ...prev,
+                  displayName: data.user.displayName,
+                  mutedCategories: data.user.mutedCategories,
+                  strictTrustMode: data.user.strictTrustMode,
+                }
+              : (data.user as AuthenticatedSessionUser),
+          );
+        }
+      } catch {}
+    },
+    [sessionToken],
+  );
+
+  const handleSignOut = useCallback(async () => {
+    const headers: Record<string, string> = {};
+    if (sessionToken) {
+      headers.Authorization = `Bearer ${sessionToken}`;
+    }
+    try {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+        headers,
+      });
+    } catch {
+      // Clear local session regardless of network response
+    }
+    lastSyncedSignatureRef.current = "";
+    setAuthUser(null);
+    setSessionToken(null);
+    setSelectedProduct(null);
+    setImportModalOpen(false);
+    setCompareNotice(null);
+    setShortlistIds([]);
+    setCompareIds([]);
+    try {
+      window.localStorage.removeItem(SESSION_TOKEN_STORAGE_KEY);
+      window.localStorage.removeItem("rl_shortlist_ids");
+      window.localStorage.removeItem("rl_compare_ids");
+    } catch {}
+  }, [sessionToken]);
 
   const toggleDarkMode = useCallback(() => {
     setIsDarkMode((prev) => {
@@ -175,7 +413,7 @@ export default function StorefrontPage() {
 
   const toggleShortlist = useCallback((id: string) => {
     setShortlistIds((prev) => {
-      const next = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id];
+      const next = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id].slice(0, 50);
       try {
         window.localStorage.setItem("rl_shortlist_ids", JSON.stringify(next));
       } catch {}
@@ -235,6 +473,33 @@ export default function StorefrontPage() {
     }
     return Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
   }, [catalogItems, selectedCategory]);
+
+  const mutedCategoriesKey = (authUser?.mutedCategories ?? []).join(",");
+  const strictTrustMode = Boolean(authUser?.strictTrustMode);
+
+  // Live relational Buyer Profile derived from shortlistIds + compareIds
+  const buyerProfile = useMemo(
+    () =>
+      computeBuyerProfile(catalogItems, {
+        shortlistIds,
+        compareIds,
+        mutedCategories: mutedCategoriesKey ? mutedCategoriesKey.split(",") : [],
+        strictTrustMode,
+        favoriteTimestamps: authUser?.favoriteTimestamps,
+      }),
+    [catalogItems, shortlistIds, compareIds, mutedCategoriesKey, strictTrustMode, authUser?.favoriteTimestamps],
+  );
+
+  const forYouScoreMap = useMemo(
+    () =>
+      computeForYouCatalogScores(catalogItems, {
+        shortlistIds,
+        compareIds,
+        mutedCategories: mutedCategoriesKey ? mutedCategoriesKey.split(",") : [],
+        strictTrustMode,
+      }),
+    [catalogItems, shortlistIds, compareIds, mutedCategoriesKey, strictTrustMode],
+  );
 
   // Filtered + Sorted Catalog Items
   const filteredItems = useMemo(() => {
@@ -301,6 +566,12 @@ export default function StorefrontPage() {
       const riskB = b.snapshot?.details?.averageRisk ?? 0.14;
 
       switch (sortBy) {
+        case "for_you": {
+          const scoreA = forYouScoreMap.get(pA.id) ?? 0;
+          const scoreB = forYouScoreMap.get(pB.id) ?? 0;
+          if (scoreB !== scoreA) return scoreB - scoreA;
+          return riskA - riskB;
+        }
         case "price_asc":
           return (pA.price ?? Number.MAX_SAFE_INTEGER) - (pB.price ?? Number.MAX_SAFE_INTEGER);
         case "price_desc":
@@ -331,6 +602,7 @@ export default function StorefrontPage() {
     trustFilter,
     selectedBrands,
     sortBy,
+    forYouScoreMap,
   ]);
 
   const activeFilterCount = useMemo(() => {
@@ -374,10 +646,46 @@ export default function StorefrontPage() {
     [selectedProduct, catalogItems],
   );
 
+  if (authChecking) {
+    return (
+      <div className={isDarkMode ? "dark" : ""}>
+        <div className="min-h-screen flex items-center justify-center bg-[#FAFAFA] dark:bg-slate-950 px-4">
+          <div className="w-full max-w-[1200px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 animate-pulse">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="h-5 w-32 bg-slate-200 dark:bg-slate-800 rounded" />
+              <div className="h-9 w-4/5 bg-slate-200 dark:bg-slate-800 rounded" />
+              <div className="h-4 w-3/4 bg-slate-100 dark:bg-slate-800 rounded" />
+              <div className="h-52 w-full bg-slate-100 dark:bg-slate-800 rounded-xl mt-6" />
+            </div>
+            <div className="lg:col-span-5 space-y-4 flex flex-col justify-center">
+              <div className="h-10 w-full bg-slate-100 dark:bg-slate-800 rounded-xl" />
+              <div className="h-11 w-full bg-slate-100 dark:bg-slate-800 rounded-xl" />
+              <div className="h-11 w-full bg-slate-100 dark:bg-slate-800 rounded-xl" />
+              <div className="h-11 w-full bg-slate-200 dark:bg-slate-800 rounded-xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!authUser) {
+    return (
+      <LoginScreen
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={toggleDarkMode}
+        supabaseConfigured={supabaseConfigured}
+        guestShortlistIds={shortlistIds}
+        guestCompareIds={compareIds}
+        onAuthenticated={handleAuthenticated}
+      />
+    );
+  }
+
   return (
     <div className={isDarkMode ? "dark" : ""}>
       <div className="min-h-screen flex flex-col bg-[#FAFAFA] dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-150">
-        {/* Top Bar with Theme Toggle */}
+        {/* Top Bar with Theme Toggle & Session Sign Out */}
         <Header
           activeSection={activeSection}
           setActiveSection={setActiveSection}
@@ -386,6 +694,8 @@ export default function StorefrontPage() {
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
           onOpenImport={() => setImportModalOpen(true)}
+          username={authUser.username}
+          onSignOut={handleSignOut}
         />
 
         {/* Mobile Section Switcher (visible below md) */}
@@ -393,10 +703,11 @@ export default function StorefrontPage() {
           {(
             [
               { id: "catalog", label: `Catalog (${catalogItems.length || 30})` },
+              { id: "profile", label: "Buyer Profile" },
+              { id: "shortlist", label: `Shortlist (${shortlistIds.length})` },
               { id: "compare", label: `Compare (${compareIds.length})` },
               { id: "benchmarks", label: "Benchmarks" },
               { id: "tester", label: "Review Lab" },
-              { id: "shortlist", label: `Shortlist (${shortlistIds.length})` },
             ] as { id: ActiveSection; label: string }[]
           ).map((tab) => (
             <button
@@ -745,6 +1056,43 @@ export default function StorefrontPage() {
 
                 {/* Right Product Listing Workspace */}
                 <div className="flex-1 min-w-0 w-full space-y-4">
+                  {/* Personalised Buyer Profile Strip */}
+                  {buyerProfile.hasSignals && (
+                    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 tabular-nums">
+                      <div className="text-xs text-slate-600 dark:text-slate-300">
+                        <strong className="font-semibold text-slate-900 dark:text-white">
+                          {buyerProfile.personaTitle}
+                        </strong>
+                        {" · "}
+                        {buyerProfile.categoryAffinities
+                          .filter((c) => !c.muted)
+                          .slice(0, 2)
+                          .map((c) => `${c.category} (${c.sharePercent}%)`)
+                          .join(" · ")}
+                        {buyerProfile.trust && ` · ${buyerProfile.trust.avgGenuinePercent}% avg genuine`}
+                      </div>
+                      <div className="flex items-center gap-3 text-xs">
+                        {sortBy !== "for_you" && (
+                          <button
+                            type="button"
+                            onClick={() => setSortBy("for_you")}
+                            className="font-semibold text-amber-700 dark:text-amber-400 hover:underline whitespace-nowrap cursor-pointer"
+                          >
+                            Sort For You
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => setActiveSection("profile")}
+                          className="font-semibold text-slate-800 dark:text-slate-100 hover:underline inline-flex items-center gap-1 whitespace-nowrap cursor-pointer"
+                        >
+                          <span>Buyer Profile</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Sort & View Mode Utility Bar */}
                   <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3">
                     <div className="text-xs text-slate-600 dark:text-slate-300 tabular-nums">
@@ -788,6 +1136,7 @@ export default function StorefrontPage() {
                           onChange={(e) => setSortBy(e.target.value as SortOption)}
                           className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400 cursor-pointer"
                         >
+                          <option value="for_you">For You (Buyer Profile Match)</option>
                           <option value="popularity">Popularity (Most Reviewed)</option>
                           <option value="price_asc">Price: Low to High</option>
                           <option value="price_desc">Price: High to Low</option>
@@ -932,70 +1281,45 @@ export default function StorefrontPage() {
             <EvaluationSection onSelectProductById={selectProductById} />
           )}
 
-          {/* Saved Shortlist View */}
-          {activeSection === "shortlist" && (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-                    Saved Shortlist ({shortlistedItems.length})
-                  </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Products you bookmarked while browsing to inspect reviews or compare pricing.
-                  </p>
-                </div>
-                {shortlistedItems.length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShortlistIds([]);
-                      try {
-                        window.localStorage.removeItem("rl_shortlist_ids");
-                      } catch {}
-                    }}
-                    className="px-3.5 py-2 text-xs font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 rounded-lg cursor-pointer"
-                  >
-                    Clear Shortlist
-                  </button>
-                )}
-              </div>
-
-              {shortlistedItems.length === 0 ? (
-                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-12 text-center max-w-xl mx-auto my-8">
-                  <Heart className="w-10 h-10 text-slate-400 dark:text-slate-500 mx-auto mb-3 stroke-[1.5]" />
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-                    Your Shortlist is Empty
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-6">
-                    Tap the heart icon on any of the 30 catalog items to save it here for quick review tracking and price checks.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setActiveSection("catalog")}
-                    className="px-5 py-2.5 text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors cursor-pointer"
-                  >
-                    Browse 30-Item Catalog
-                  </button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {shortlistedItems.map(({ product, snapshot, reviews }) => (
-                    <ProductCard
-                      key={product.id}
-                      product={product}
-                      snapshot={snapshot}
-                      reviewCountLoaded={reviews?.length}
-                      viewMode="grid"
-                      isCompared={compareIds.includes(product.id)}
-                      isShortlisted={true}
-                      onSelect={setSelectedProduct}
-                      onToggleCompare={toggleCompare}
-                      onToggleShortlist={toggleShortlist}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
+          {/* Favourites-Driven Buyer Profile & Saved Shortlist Workspace */}
+          {(activeSection === "shortlist" || activeSection === "profile") && (
+            <BuyerProfileSection
+              key={activeSection}
+              user={authUser}
+              supabaseConfigured={supabaseConfigured}
+              initialSubTab={activeSection === "shortlist" ? "shortlist" : "taste"}
+              buyerProfile={buyerProfile}
+              shortlistedItems={shortlistedItems}
+              compareIds={compareIds}
+              shortlistIds={shortlistIds}
+              onSelectProduct={setSelectedProduct}
+              onSelectProductById={selectProductById}
+              onToggleCompare={toggleCompare}
+              onToggleShortlist={toggleShortlist}
+              onClearShortlist={() => {
+                setShortlistIds([]);
+                try {
+                  window.localStorage.removeItem("rl_shortlist_ids");
+                } catch {}
+              }}
+              onApplyForYouSort={() => {
+                resetAllFilters();
+                setSortBy("for_you");
+                setActiveSection("catalog");
+              }}
+              onBrowseCategory={(cat) => {
+                setSelectedCategory(cat);
+                setSelectedBrands([]);
+                setActiveSection("catalog");
+              }}
+              onBrowseBrand={(brand) => {
+                setSelectedCategory("all");
+                setSelectedBrands([brand]);
+                setActiveSection("catalog");
+              }}
+              onBrowseCatalog={() => setActiveSection("catalog")}
+              onUpdatePreferences={handleUpdateProfilePreferences}
+            />
           )}
 
           {/* Live Review Authenticity & Segregation Lab */}
