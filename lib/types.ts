@@ -18,7 +18,7 @@ export type DataSourceType =
   | "user_pasted"
   | "site_user";
 
-export type Marketplace = "amazon.in" | "flipkart";
+export type Marketplace = "amazon.in" | "flipkart" | "web";
 
 export type VerificationLevel = "verified" | "ai_grounded" | "link_only";
 

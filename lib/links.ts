@@ -44,3 +44,20 @@ export function parseProductLink(rawUrl: string): ParsedProductLink {
 
   return { ok: false, reason: "unsupported_marketplace", detail: "Only amazon.in and flipkart.com product links are supported." };
 }
+
+export function extractStoreLabel(sourceUrl?: string | null, source?: Marketplace): string {
+  if (source === "amazon.in") return "Amazon.in";
+  if (source === "flipkart") return "Flipkart";
+  if (sourceUrl) {
+    try {
+      const host = new URL(sourceUrl).hostname.toLowerCase().replace(/^www\./, "").replace(/^m\./, "");
+      if (host.endsWith("amazon.in")) return "Amazon.in";
+      if (host.includes("flipkart.com")) return "Flipkart";
+      if (host) return host;
+    } catch {
+      // Fall through
+    }
+  }
+  return "Store Page";
+}
+

@@ -23,6 +23,7 @@ import {
 import type { ProductClusterForensics } from "@/lib/forensics";
 import type { ProductClaimVerificationReport } from "@/lib/gemini";
 import type { ProductRecord, ReviewRecord } from "@/lib/types";
+import { extractStoreLabel } from "@/lib/links";
 import { ProductArtwork } from "./ProductArtwork";
 
 interface ProductDetailModalProps {
@@ -565,14 +566,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>
-                    ASIN:{" "}
+                    {product.source === "amazon.in"
+                      ? "ASIN:"
+                      : product.source === "flipkart"
+                        ? "PID:"
+                        : "ID:"}{" "}
                     <span className="font-mono text-slate-700 dark:text-slate-200">
                       {product.externalId}
                     </span>
                   </span>
                   <span aria-hidden="true">·</span>
                   <span className="text-emerald-700 dark:text-emerald-400 font-medium">
-                    Verified Marketplace Identity
+                    {product.verificationLevel === "verified"
+                      ? "Verified Marketplace Identity"
+                      : "Link Analyzer Inspected"}
                   </span>
                 </div>
 
@@ -626,7 +633,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       rel="noopener noreferrer"
                       className="px-3.5 py-2 text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg inline-flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0"
                     >
-                      Amazon.in <ExternalLink className="w-3.5 h-3.5" />
+                      {extractStoreLabel(product.sourceUrl, product.source)} <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   )}
                   <a

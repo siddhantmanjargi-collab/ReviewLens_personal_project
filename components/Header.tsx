@@ -5,9 +5,8 @@ import { LogOut, Moon, Sun, User } from "lucide-react";
 
 export type ActiveSection =
   | "catalog"
+  | "analyzer"
   | "compare"
-  | "benchmarks"
-  | "tester"
   | "shortlist"
   | "profile";
 
@@ -18,7 +17,7 @@ interface HeaderProps {
   shortlistCount: number;
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
-  onOpenImport: () => void;
+  onOpenAnalyzer: () => void;
   username: string;
   onSignOut: () => void;
 }
@@ -30,15 +29,14 @@ export const Header: React.FC<HeaderProps> = ({
   shortlistCount,
   isDarkMode,
   onToggleDarkMode,
-  onOpenImport,
+  onOpenAnalyzer,
   username,
   onSignOut,
 }) => {
   const navItems: { id: ActiveSection; label: string }[] = [
     { id: "catalog", label: "Catalog" },
+    { id: "analyzer", label: "Link Analyzer" },
     { id: "compare", label: compareCount > 0 ? `Compare (${compareCount})` : "Compare" },
-    { id: "benchmarks", label: "Benchmarks" },
-    { id: "tester", label: "Review Lab" },
     { id: "shortlist", label: shortlistCount > 0 ? `Shortlist (${shortlistCount})` : "Shortlist" },
   ];
 
@@ -56,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({
           ReviewLens
         </button>
 
-        {/* Zone 2: 5 concise single-line text links */}
+        {/* Zone 2: 4 concise single-line text links */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 tabular-nums">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
@@ -115,11 +113,11 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             type="button"
-            onClick={onOpenImport}
+            onClick={onOpenAnalyzer}
             className="px-3 sm:px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 bg-slate-900 dark:bg-amber-400 hover:bg-slate-800 dark:hover:bg-amber-300 rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-500"
           >
-            <span className="hidden sm:inline">Add Product Link</span>
-            <span className="sm:hidden">Add Link</span>
+            <span className="hidden sm:inline">Analyze Link</span>
+            <span className="sm:hidden">Inspect URL</span>
           </button>
 
           <button

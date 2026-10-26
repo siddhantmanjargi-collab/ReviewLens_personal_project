@@ -78,6 +78,23 @@ interface ProductArtworkProps {
   specs?: Record<string, string | number | boolean>;
 }
 
+const ALLOWED_REMOTE_IMAGE_HOSTS = new Set([
+  "m.media-amazon.com",
+  "images-eu.ssl-images-amazon.com",
+  "rukminim2.flixcart.com",
+]);
+
+function isConfiguredNextImageSrc(src?: string | null): src is string {
+  if (!src) return false;
+  if (src.startsWith("/")) return true;
+  try {
+    const parsed = new URL(src);
+    return parsed.protocol === "https:" && ALLOWED_REMOTE_IMAGE_HOSTS.has(parsed.hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
 export const ProductArtwork: React.FC<ProductArtworkProps> = ({
   imageUrl,
   remoteImageUrl,
@@ -100,13 +117,15 @@ export const ProductArtwork: React.FC<ProductArtworkProps> = ({
 
   const studioImg = (category && CATEGORY_STUDIO_PHOTO[category]) || smartphoneImg;
   const specEntries = Object.entries(specs ?? {}).slice(0, 2);
+  const safePrimarySrc = isConfiguredNextImageSrc(imageUrl) ? imageUrl : null;
+  const safeBackupSrc = isConfiguredNextImageSrc(remoteImageUrl) ? remoteImageUrl : null;
 
-  // Stage 1: Verified local /products/<ASIN>.jpg (same-origin, immune to CDN/adblocker failures)
-  if (imageUrl && !primaryFailed) {
+  // Stage 1: Verified local /products/<ASIN>.jpg or configured marketplace CDN
+  if (safePrimarySrc && !primaryFailed) {
     return (
       <div className="relative w-full h-full bg-white overflow-hidden select-none">
         <Image
-          src={imageUrl}
+          src={safePrimarySrc}
           alt={productName}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -118,12 +137,12 @@ export const ProductArtwork: React.FC<ProductArtworkProps> = ({
     );
   }
 
-  // Stage 2: Verified remote Amazon CDN backup URL (if distinct from primary)
-  if (remoteImageUrl && remoteImageUrl !== imageUrl && !remoteBackupFailed) {
+  // Stage 2: Verified remote Amazon/Flipkart CDN backup URL (if distinct from primary)
+  if (safeBackupSrc && safeBackupSrc !== safePrimarySrc && !remoteBackupFailed) {
     return (
       <div className="relative w-full h-full bg-white overflow-hidden select-none">
         <Image
-          src={remoteImageUrl}
+          src={safeBackupSrc}
           alt={productName}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

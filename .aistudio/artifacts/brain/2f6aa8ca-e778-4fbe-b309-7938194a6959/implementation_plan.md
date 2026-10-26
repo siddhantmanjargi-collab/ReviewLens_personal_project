@@ -1,24 +1,24 @@
-# ReviewLens — Full-App Username & Password Login with Synced Shortlist & Comparisons
+# ReviewLens — Link Analyzer & Product Reliability Inspector
 
-Add a dedicated username and password authentication gate that protects the entire ReviewLens application while automatically syncing each signed-in user's saved shortlist and product comparison tray to the server—with zero user profile management overhead.
+Replace the legacy **Benchmarks** and **Review Lab** tabs with a dedicated **Link Analyzer** workspace where shoppers paste any product URL, automatically inspect the page and independent web evidence, read a structured item summary with pros, cons, and red flags, receive a clear **Reliability Statement**, discover higher-trust catalog alternatives when an item looks risky, and save or compare analyzed products in one click.
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> Updated per your feedback: **all user profile features (display names, role titles, profile editing modals, and profile endpoints) have been completely removed**. The scope now focuses strictly on username/password login, full-app protection, and server-synced shortlists and comparisons.
+> Please review the confirmed scope below before execution begins. **Benchmarks**, **Review Lab**, and the old manual admin-key link entry modal will be retired from the navigation and replaced with the unified **Link Analyzer**.
 
-- **Confirmed Decision — Authentication Method**: Simple **username and password** sign-in and account registration (`Username` + `Password` only), secured with server-side salted `scrypt` password hashing and HMAC-signed session tokens.
-- **Confirmed Decision — Access Protection Scope**: **Full-application authentication gate**. Unauthenticated visitors land directly on the ReviewLens sign-in screen; all storefront browsing, product inspections, comparison matrices, benchmark evaluations, and Review Lab tools unlock immediately upon sign-in.
-- **Confirmed Decision — Synced Workspace Scope (No User Profile)**: **Server-synced shortlist and product comparisons only**. Toggling shortlisted products and building up to a 4-item comparison set sync automatically to the signed-in account across sessions and browsers, with no user profile fields or profile settings UI.
-- **Recommended Convenience Default — Instant Sign-Up & Demo Quick-Fill**: Alongside creating any custom username and password account, the login card includes a one-click **"Fill Demo Credentials"** helper (`analyst`) so anyone evaluating ReviewLens can test the protected workspace immediately without inventing credentials.
+- **Confirmed Decision — Supported Product Links**: Supports **any `http`/`https` product webpage** (brand stores, Croma, Reliance Digital, Vijay Sales, D2C sites, review pages) with specialized **Amazon India (`amazon.in`) and Flipkart (`flipkart.com`)** canonical ID extraction, shortened-link redirect resolution, and bot-wall recovery.
+- **Confirmed Decision — Reliability Report Depth**: Delivers an executive **Item Summary**, explicit **Reliability Verdict & Statement** (*Reliable to Buy*, *Buy with Caution*, or *Unreliable / High Risk*), **Trust & Authenticity Score**, **Pros & Cons**, **Red Flags & Claim Checks**, and **Better Catalog Alternatives** whenever a product scores poorly or appears overpriced.
+- **Confirmed Decision — Streamlined Header Action & One-Click Save**: Retires the manual *"Add Product Link"* form (which previously required typing product name, price, and an admin key). Clicking the header's primary **"Analyze Link"** button opens the Link Analyzer directly, where any inspected product can be **saved to the Catalog, added to Shortlist, or sent to the 4-way Compare tray in one click**.
+- **Confirmed Continuity — Seamless Local Fallback**: Consistent with your earlier preference, if `GEMINI_API_KEY` in **Settings > Secrets** is unset or unavailable, the analyzer never blocks—it seamlessly synthesizes the report from live HTML/`Schema.org` metadata, URL slug & domain trust signals, and cross-checks against the verified 30-product catalog with a subtle non-intrusive status note.
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Does**: Introduces a clean authentication gate, username/password sign-in and registration screen, cryptographic session layer, and server-synced shortlist and comparison storage for ReviewLens. Users sign in or register with just a username and password to unlock the 30-product Indian marketplace directory, shill-ring forensic graph, claim verifier, and Review Lab, while keeping their saved shortlist and comparison selections persisted to their account.
-- **Target Audience / Persona**: Shoppers, e-commerce analysts, and portfolio reviewers who want authenticated access and persistent product shortlists and side-by-side comparisons across sessions without unnecessary profile setup friction.
-- **Key Value**: Upgrades ReviewLens from an anonymous single-browser demo into a stateful, multi-user product intelligence workspace with real credential verification, full-app route/workspace protection, and seamless shortlist and comparison synchronization.
+- **What It Does**: Turns ReviewLens from a static benchmark showcase into an active pre-purchase inspection tool. A shopper pastes any product link, and ReviewLens opens and parses the target page on the server, cross-checks product claims and buyer sentiment via Gemini URL Context and Google Search grounding, evaluates seller/listing/review risk signals, outputs a plain-English reliability statement, recommends safer catalog alternatives in the same category and INR budget, and lets the user save the item directly into their ReviewLens workspace.
+- **Target Audience / Persona**: Indian online shoppers comparing electronics, appliances, and accessories across Amazon.in, Flipkart, and brand storefronts who want an honest second opinion before spending money.
+- **Key Value**: Eliminates guesswork, fake-discount traps, and bot-blocked dead ends by combining live page metadata extraction, web-grounded review cross-checking, personalized catalog alternatives, and frictionless one-click catalog saving.
 
 ---
 
@@ -26,54 +26,51 @@ Add a dedicated username and password authentication gate that protects the enti
 
 ### Key User Flows
 
-1. **Arrival & Session Check**:
-   - On initial load, a lightweight session check verifies whether an active authenticated session exists. While resolving, a crisp minimal skeleton matching the ReviewLens canvas prevents any flash of unauthenticated content.
-   - If unauthenticated, the full-viewport **ReviewLens Sign In & Create Account Screen** renders immediately.
-2. **Sign In & Account Registration (`Username` + `Password` Only)**:
-   - Users switch cleanly between **Sign In** and **Create Account** segmented tabs at the top of the authentication card.
-   - **Sign In**: Accepts `Username` and `Password` (with a show/hide password visibility toggle), validates inputs inline, and transitions straight into the storefront workspace on success. Includes a subtle one-click **"Fill Demo Credentials"** helper for rapid evaluation.
-   - **Create Account**: Accepts strictly `Username` (3–24 characters, alphanumeric/underscores) and `Password` (minimum 6 characters)—no profile names, avatars, or extra fields—creates the hashed account on the server, carries over any existing local shortlist or comparison items, and signs the user in automatically.
-3. **Synced Shortlist & Comparison Workflow**:
-   - Once signed in, adding or removing products from the **Shortlist** or **Compare (up to 4)** tray updates the UI optimistically in `<50ms` and syncs asynchronously in the background to the user's server record.
-4. **Session Indicator & Sign Out**:
-   - Inside the workspace, a compact session control displays the signed-in `@username` handle alongside a direct **Sign Out** button—no profile drawers, settings modals, or profile forms.
-   - Clicking **Sign Out** clears the server session cookie and client session token, resets active user state cleanly, and returns smoothly to the Sign In screen.
+1. **Streamlined Navigation (Benchmarks & Review Lab Removed)**:
+   - Top bar navigation simplifies to four crisp single-line destinations: **Catalog**, **Link Analyzer**, **Compare**, and **Shortlist**, alongside the `@username` Buyer Profile trigger, theme toggle, primary **Analyze Link** CTA, and **Sign Out** button.
+   - Mobile section switcher mirrors the exact same streamlined tabs with zero dead references to Benchmarks or Review Lab.
+2. **Paste URL & Quick-Try Sample Links (Zero-State)**:
+   - Entering **Link Analyzer** presents a focused URL inspection bar (`Paste any Amazon.in, Flipkart, or product webpage link...`) with an **Inspect Product** primary button.
+   - Beneath the input, 3–4 clickable sample pills/buttons (including a verified flagship listing, a mid-range listing with mixed claims, and a high-discount caution example, plus recent session inspections) let users test the full flow immediately or re-open recent reports in one click.
+3. **Multi-Stage Inspection Progress**:
+   - Submitting a URL displays a calm, high-precision skeleton and step indicator (*Opening product page & reading structured metadata -> Cross-checking independent specifications & buyer reports -> Computing reliability verdict & alternatives*) with zero layout shift.
+4. **Executive Reliability Report & Item Summary**:
+   - **Contiguous Verdict Hero**: Displays extracted/fallback product artwork on the left, clean unboxed metadata (`Store Domain · Category · Inspection Mode`), product title, detected INR pricing/MRP discount (in `tabular-nums`), and a high-contrast **Reliability Verdict Banner**:
+     - *Reliable to Buy* (Emerald semantic accent + icon + clear statement explaining why specifications, pricing, and review signals align).
+     - *Buy with Caution* (Amber semantic accent + icon + specific caveats to check before ordering).
+     - *Unreliable / High Risk* (Crimson semantic accent + icon + concrete warning reasons).
+   - **Structured Breakdown Grid**:
+     - **Item Summary & Key Specifications**: Plain-English overview of what the product offers alongside extracted technical specs in a clean key-value table.
+     - **What Buyers & Specs Confirm (Pros) vs. Watchouts (Cons)**: Side-by-side scannable lists grounded in page data and external review consensus.
+     - **Reliability Signals & Red Flags**: Specific forensic checks (e.g., *Inflated MRP discount framing*, *Missing manufacturer model number*, *Unverified seller / sparse review volume*, *Page bot-wall bypassed via web grounding*, or *Corroborated hardware specs*) plus clickable grounding source links when live web verification runs.
+5. **One-Click Workspace Actions & Better Alternatives**:
+   - Directly inside the report header, users have three immediate actions: **Save to Catalog** (auto-populates product details without any admin key), **Save to Shortlist** (syncs immediately with Supabase/account favourites and updates Buyer DNA), and **Add to Compare**.
+   - Below the breakdown, a **Safer & Higher-Trust Alternatives** strip surfaces up to 3 verified catalog items in the same department and comparable INR price range—prioritizing items with `85%+` genuine review patterns and highlighting how their trust score and price compare against the inspected link.
 
 ### Visual Identity & Theme
 
-- **Aesthetic Direction**: Structured e-commerce & forensic SaaS editorial aesthetic matching ReviewLens's existing visual DNA—clean architectural geometry, crisp hairline borders, zero decorative clutter, and authoritative marketplace trust cues.
-- **Color Palette & Mood (60-30-10 Discipline)**:
-  - *60% Dominant Neutral Canvas*: Soft off-white `#FAFAFA` (`bg-[#FAFAFA]`) in light mode; deep slate `#020617` (`dark:bg-slate-950`) in dark mode.
-  - *30% Structural Surfaces*: Pure white `#FFFFFF` (`bg-white`) and slate `#0F172A` (`dark:bg-slate-900`) panels separated by 1px hairline borders (`border-slate-200 dark:border-slate-800`), strictly single-elevation depth (no cards nested inside cards, no thick left borders).
-  - *10% High-Intent Accent*: Warm marketplace amber (`bg-amber-400 text-slate-950` / `text-amber-700 dark:text-amber-400`) and deep charcoal (`bg-slate-900 text-white`) reserved strictly for primary CTAs, active segmented tabs, and focus rings. Semantic crimson (`text-red-600 dark:text-red-400`) paired with explicit text explanations for validation errors.
-- **Typography & Hierarchy**:
-  - *Display & UI Prose*: `Plus Jakarta Sans` (`--font-sans`) in Regular (400), SemiBold (600), and Bold (700), with `text-wrap: balance` on display headlines to prevent orphan words.
-  - *Metrics, Usernames & Counts*: `JetBrains Mono` (`--font-mono`) and `tabular-nums` for catalog metrics (`30 Products · 180 Audited Reviews`), `@username` handles, and synced shortlist/comparison counters.
-- **Component Styling & Spatial Layout**:
-  - **2-Column Balanced Desktop Login Split (`1440px` baseline)**:
-    - *Left Column (Showcase Panel, `lg:col-span-7`)*: Brand wordmark, balanced editorial headline explaining ReviewLens's verified Indian marketplace intelligence, unboxed typographic proof line (`30 Verified Products · 10 Departments · Shill-Ring Forensics`), and high-resolution hardware showcase photography with a measured contrast scrim.
-    - *Right Column (Authentication Module, `lg:col-span-5`)*: Clean, vertically centered authentication card with generous `p-8` outer padding, segmented `Sign In | Create Account` control, accessible `>= 44px` `Username` and `Password` fields, password visibility button, primary submit CTA, and demo quick-fill button.
-  - **Top Bar Contract Compliance**: Keeps the top navigation bar strictly single-row (`whitespace-nowrap shrink-0`) with the signed-in `@username` indicator and **Sign Out** action cleanly integrated without adding extra rows or profile menus.
-
-### Interactive Feedback & Motion
-
-- **Routine Latency Budget (`<= 180ms`)**: Compositor-only `opacity` and `transform` transitions via `motion/react` when switching between Sign In / Create Account tabs or transitioning from the Login Gate into the Storefront.
-- **Explicit Loading, Error & Sync States**: Submit buttons lock against double-submission with inline status text (`Signing in...` / `Creating account...`); credential mismatches display clear, accessible inline messages (`Invalid username or password`) without browser alerts; shortlist and comparison changes persist silently in the background.
+- **Aesthetic Direction**: Utilitarian editorial storefront & consumer-reports inspection desk—clean, authoritative, and scam-resistant without noisy dashboard gimmicks.
+- **Color Palette & Mood**: Preserves ReviewLens's 60-30-10 light/dark system:
+  - *60% Neutral Canvas*: Crisp `#FAFAFA` light canvas / `#020617` (`slate-950`) dark canvas.
+  - *30% Structural Surfaces*: Single-elevation `white` / `slate-900` containers with `1px` hairline borders (`border-slate-200` / `border-slate-800`)—no nested card sandwiches and no thick `border-l-4` callout stripes.
+  - *10% Semantic & Action Accents*: `slate-900` / `amber-400` primary interactive controls; semantic reliability states always pair color + icon + explicit text label (`emerald` for Reliable, `amber` for Caution, `rose`/`red` for Unreliable) for full WCAG AA color-blind accessibility.
+- **Typography & Tabular Discipline**: Clean sans display/body hierarchy with `text-wrap: balance` on report headlines, unboxed metadata separated by middle dots (`·`), and strict `tabular-nums` / monospace figures across all INR prices, discounts, ratings, and reliability scores.
+- **Interactive Feedback & Motion**: Compositor-only `opacity`/`transform` transitions settling within `160ms–180ms`, instant optimistic state updates when saving to Catalog/Shortlist/Compare, and resilient category studio photography fallbacks so arbitrary external store URLs never render broken images.
 
 ---
 
 ## 3. Key Product Decisions & Trade-Offs
 
-- **Decision 1: Self-Contained Cryptographic Username/Password Auth vs. External OAuth Providers**
-  - *Chosen Approach*: Server-side username/password authentication using Node's native `crypto.scrypt` password derivation and HMAC-SHA256 signed session tokens, paired with dual cookie (`SameSite=None; Secure; HttpOnly` on HTTPS) + `Authorization: Bearer` header fallback.
-  - *Why*: Directly fulfills the request for simple username and password login with zero extra profile fields, OAuth popups, or email verification steps—and guarantees 100% session reliability inside embedded preview iframes even when browsers block third-party cookies.
-  - *Alternatives Considered*: Firebase Auth (provisions Google Sign-In rather than plain username/password) and client-only `localStorage` mock login (insecure and does not persist shortlists/comparisons on the server).
-- **Decision 2: Hybrid Cloud + Durable Server Persistence for Accounts, Shortlists & Comparisons**
-  - *Chosen Approach*: Extend ReviewLens's repository layer with a lightweight User & Sync Store that persists accounts, `shortlistIds`, and `compareIds` to Supabase when configured and falls back seamlessly to durable server-side JSON storage, pre-seeded with a ready-to-use `analyst` demo account.
-  - *Why*: Matches ReviewLens's existing hybrid persistence architecture so accounts, shortlists, and comparisons work out of the box with zero external database setup required, while scaling cleanly to cloud Postgres when environment credentials are present.
-- **Decision 3: Optimistic UI Updates with Debounced Server Sync**
-  - *Chosen Approach*: Update `shortlistIds` and `compareIds` immediately in React state while dispatching a `250ms` debounced background sync request to the server sync route.
-  - *Why*: Preserves instant `0ms` storefront responsiveness when toggling shortlist or compare buttons across product cards while keeping server state synchronized.
+- **Decision 1 — Three-Layer Page Opening & Grounding Pipeline**:
+  - *Chosen Approach*: Combine (1) **Server-Side HTTP Page Fetch & Structured Parser** (follows redirects including shortened links, reads `<script type="application/ld+json">` `Product`/`Offer`/`AggregateRating` schemas, OpenGraph tags, `<title>`, meta descriptions, INR price patterns, and sanitized visible text) -> (2) **Gemini `gemini-3.8-flash` with `urlContext` + `googleSearch` Grounding** (inspects the target URL context and cross-verifies the product model, real-world street price, and common buyer complaints across independent reviews, even if Amazon/Flipkart returns a `403`/`503` CAPTCHA wall to raw HTTP) -> (3) **Deterministic Catalog & Heuristic Analyzer Fallback** (matches ASIN/`pid`/slug against the 30-item verified catalog or synthesizes structured metadata + URL/price/claim risk heuristics locally when `GEMINI_API_KEY` is unavailable).
+  - *Why*: E-commerce marketplaces aggressively throttle raw server scrapers. A single-method HTML scraper fails on Amazon/Flipkart CAPTCHAs, while an LLM-only guesser misses live page metadata on open D2C stores. Layering both—backed by a local fallback—guarantees every valid product URL produces a rich, truthful report.
+  - *Alternatives Considered*: Headless browser automation (rejected due to slow cold starts, high memory overhead, and identical CAPTCHA blocks in cloud containers).
+- **Decision 2 — One-Click Authenticated Catalog Save Instead of Admin-Key Form**:
+  - *Chosen Approach*: Allow any signed-in ReviewLens user to save an analyzed product directly into the active Catalog repository (and immediately shortlist or compare it) using the structured fields already extracted by the Link Analyzer, normalizing non-Amazon/Flipkart web storefronts cleanly alongside marketplace listings.
+  - *Why*: Eliminates tedious manual form entry and removes the developer-only `x-admin-key` barrier from the user workflow.
+- **Decision 3 — Trust-Weighted Alternative Recommendations**:
+  - *Chosen Approach*: Automatically rank 2–3 verified catalog products matching the detected department (inferred from page schema/keywords) and INR price band, weighted by genuine review percentage (`1 - averageRisk`) and the signed-in user's Buyer Profile affinities.
+  - *Why*: Telling a shopper *"Buy with Caution"* is twice as helpful when paired immediately with *"Here is a verified alternative in the same budget with 91% genuine reviews."*
 
 ---
 
@@ -83,61 +80,69 @@ Add a dedicated username and password authentication gate that protects the enti
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                         Client Application (React)                           │
+│                         Authenticated ReviewLens UI                          │
 │                                                                              │
 │  ┌────────────────────────────────────────────────────────────────────────┐  │
-│  │ AuthProvider & Full-App Session Gate                                   │  │
-│  │  • Bootstraps session on mount (/api/auth/me)                          │  │
-│  │  • Holds authenticated username, session token & auth actions          │  │
-│  └───────────────────┬────────────────────────────────────┬───────────────┘  │
-│                      │ (Unauthenticated)                  │ (Authenticated)  │
-│                      ▼                                    ▼                  │
-│  ┌───────────────────────────────────┐  ┌─────────────────────────────────┐  │
-│  │ Login & Registration Screen       │  │ Protected Storefront Workspace  │  │
-│  │  • 2-Col Editorial Showcase Split │  │  • Header (@username + Sign Out)│  │
-│  │  • Sign In / Create Account Tabs  │  │  • Synced Shortlist (<=50 IDs)  │  │
-│  │  • Username + Password Validation │  │  • Synced Compare (<=4 IDs)     │  │
-│  │  • 1-Click Demo Credentials Fill  │  │  • Catalog, Benchmarks & Lab    │  │
-│  └───────────────────┬───────────────┘  └─────────────────┬───────────────┘  │
-└──────────────────────┼────────────────────────────────────┼──────────────────┘
-                       │ POST /api/auth/login               │ GET / PUT
-                       │ POST /api/auth/register            │ /api/user/sync
-                       │ POST /api/auth/logout              │
-                       ▼                                    ▼
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                     Next.js Server API & Auth Layer                          │
-│                                                                              │
-│  ┌───────────────────────────────────┐  ┌─────────────────────────────────┐  │
-│  │ Session & Crypto Engine           │  │ User & Synced Lists Store       │  │
-│  │  • scrypt + 16B salt pwd hashing  │  │  • Unique normalized usernames  │  │
-│  │  • timingSafeEqual verification   │  │  • Synced shortlistIds (<=50)   │  │
-│  │  • HMAC-SHA256 signed tokens      │  │  • Synced compareIds (<=4)      │  │
-│  │  • Iframe-safe Cookie + Bearer    │  │  • Zero profile metadata bloat  │  │
-│  └───────────────────────────────────┘  └─────────────────────────────────┘  │
+│  │ Top Navigation Bar                                                     │  │
+│  │ [ReviewLens] ── [Catalog | Link Analyzer | Compare | Shortlist]        │  │
+│  │              ── [@user | Theme | Analyze Link CTA | Sign Out]          │  │
+│  └───────────────────────────────────┬────────────────────────────────────┘  │
+│                                      │                                       │
+│        ┌─────────────────────────────┼─────────────────────────────┐         │
+│        ▼                             ▼                             ▼         │
+│  ┌───────────────┐    ┌──────────────────────────────┐    ┌───────────────┐  │
+│  │ Catalog &     │    │ Link Analyzer Workspace      │    │ Compare &     │  │
+│  │ Detail Modal  │◄───┤  ├─ URL Input & Sample Links │───►│ Buyer Profile │  │
+│  └───────▲───────┘    │  ├─ Reliability Verdict Hero │    │ (Shortlist)   │  │
+│          │            │  ├─ Summary, Specs, Pros/Cons│    └───────▲───────┘  │
+│          │            │  ├─ Red Flags & Web Sources  │            │          │
+│          │            │  ├─ 1-Click Save / Compare   │────────────┘          │
+│          │            │  └─ Better Alternatives Grid │                       │
+│          │            └──────────────┬───────────────┘                       │
+└──────────┼───────────────────────────┼───────────────────────────────────────┘
+           │                           │ POST (URL Inspection / 1-Click Save)
+           │                           ▼
+┌──────────┼───────────────────────────────────────────────────────────────────┐
+│          │               Next.js Server Inspection Pipeline                  │
+│          │                                                                   │
+│  ┌───────┴────────┐     ┌─────────────────────────────────────────────────┐  │
+│  │ Hybrid Catalog │◄────┤ Link Inspection & Reliability Engine            │  │
+│  │ Repository     │     │  1. SSRF-Safe HTTP Fetch + Redirect Resolver    │  │
+│  │ (30 Verified + │     │     + JSON-LD / OpenGraph / Price-Spec Parser   │  │
+│  │  Saved Links)  │     │  2. Gemini 3.8 Flash (urlContext + googleSearch)│  │
+│  └───────▲────────┘     │     Cross-Check & Structured Verdict Synthesis  │  │
+│          │              │  3. Deterministic Local Heuristic Fallback      │  │
+│          └──────────────┤  4. Trust-Weighted Catalog Alternative Matcher  │  │
+│                         └─────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Data Model & State
 
-- **User Account Entity (Strictly Minimal)**:
-  - `id`: Deterministic/UUID user identifier
-  - `username`: Normalized lowercase handle (`^[a-z0-9_]{3,24}$`, unique)
-  - `passwordHash` & `passwordSalt`: Hex-encoded `scrypt` digest and 16-byte cryptographic salt (never returned to client)
-  - `shortlistIds`: Ordered array of shortlisted product IDs (max 50)
-  - `compareIds`: Ordered array of compared product IDs (max 4)
-  - `createdAt` & `updatedAt`: ISO-8601 timestamps
-- **Signed Session Token**:
-  - Compact HMAC-SHA256 signed payload (`userId`, `username`, `issuedAt`, `expiresAt` 7-day rolling window) verified using constant-time digest comparison. Delivered via both an `HttpOnly` cookie (`SameSite=None; Secure` on HTTPS, `SameSite=Lax` on local HTTP) and a client Bearer token fallback so embedded iframe previews never lose session state.
+- **Link Analysis Report (`LinkAnalysisReport`)**:
+  - *Target Identity*: `submittedUrl`, `finalUrl`, `domain`, `marketplace` (`amazon.in` | `flipkart` | `web`), `externalId` (ASIN, Flipkart `pid`, or deterministic URL hash), `pageFetchStatus` (`opened` | `bot_protected` | `unreachable`), `analysisMode` (`live_grounded` | `local_heuristic`), `fallbackReason` (optional).
+  - *Extracted Product Profile*: `productName`, `brand`, `model`, `category` (mapped to the 10 ReviewLens departments), `price`, `mrp`, `discountPercent`, `currency`, `rating`, `reviewCount`, `availability`, `specs` (key-value map), `summary` (concise 2–3 sentence overview).
+  - *Reliability Assessment*: `verdict` (`reliable` | `caution` | `unreliable`), `reliabilityScore` (`0–100`), `reliabilityStatement` (explicit 2-sentence buyer recommendation), `pros` (array), `cons` (array), `redFlags` (array of `{ label, severity, detail }`), `sources` (verified web grounding citations).
+  - *Catalog Integration*: `matchedCatalogProductId` (if the URL already exists in the catalog) and `alternatives` (up to 3 `CatalogAlternativeItem` matches with `productId`, `matchReason`, `genuinePercent`, and price delta).
+- **Extended Marketplace Source Support**:
+  - Broaden `Marketplace` union (`"amazon.in" | "flipkart" | "web"`) so products saved from third-party D2C or retail web links integrate seamlessly with Catalog cards, Product Detail modals, Compare matrices, and Supabase/local `user_favorites` shortlists without breaking existing Amazon/Flipkart badges or external outbound links.
+- **Recent Inspections History**:
+  - Maintain up to 6 recent `LinkAnalysisReport` entries in client session/local storage (`rl_recent_link_analyses`) so switching tabs between `Link Analyzer`, `Compare`, and `Catalog` never loses the active report.
 
 ### Interactive Component & State Mapping
 
-- **Login & Registration Screen**:
-  - *Mode Toggle*: Switches cleanly between `"login"` and `"register"`, clearing stale field errors while preserving typed `username`.
-  - *Input Validation*: Validates `username` format (`3–24` alphanumeric/underscore characters) and `password` length (`>= 6` characters) prior to submission; highlights invalid fields with accessible `aria-invalid` and inline helper text.
-  - *Demo Credentials Quick-Fill*: Populates pre-seeded `analyst` credentials for frictionless evaluation.
-  - *First-Signup Local Migration*: On account registration, reads any guest shortlist or comparison IDs present in browser storage and includes them in the initial registration payload so existing selections carry seamlessly into the new account.
-- **Session Control & Sign Out**:
-  - Displays the signed-in `@username` and a single-click **Sign Out** button that invalidates both the server session cookie and client token and returns immediately to the Login Screen.
-- **Synced Shortlist & Comparison State**:
-  - Hydrates `shortlistIds` and `compareIds` directly from the authenticated user's server record upon sign-in.
-  - Debounces rapid shortlist and comparison mutations (`250ms`) into `PUT /api/user/sync`, keeping server persistence synchronized without flooding network requests.
+- **URL Form Submission & Validation**: Validates `http:`/`https:` URLs inline (auto-prepending `https://` if omitted, and blocking private/localhost IPs on the server for SSRF safety), disables duplicate in-flight submissions, and renders stage-aware loading skeletons.
+- **Header "Analyze Link" CTA**: Switches `activeSection` to `"analyzer"` and focuses the URL input (replacing `ImportModal` completely).
+- **One-Click "Save to Catalog" / "Shortlist" / "Compare"**:
+  - If the analyzed URL already matches a catalog product (`matchedCatalogProductId`), **Shortlist** and **Compare** toggle that product directly, and **View Full Audit** opens `ProductDetailModal`.
+  - If the URL is a brand-new external item, clicking **Save to Catalog** (or clicking **Shortlist** / **Compare** directly on an unsaved item) persists the extracted `NewProduct` via an authenticated server endpoint (requiring the signed-in user session rather than a manual admin key), refreshes `catalogItems`, links `matchedCatalogProductId`, and immediately applies the requested Shortlist or Compare toggle.
+- **Alternative Product Cards**: Clicking any recommended alternative opens its full `ProductDetailModal` or adds it directly to the Compare tray alongside the newly analyzed link so the user can inspect both side by side.
+
+### Key Sequences & Integrations
+
+1. **SSRF-Safe Server Page Open**:
+   - Rejects `localhost`, loopback (`127.0.0.0/8`, `::1`), link-local (`169.254.0.0/16`), and private RFC1918 IP ranges before making outbound `fetch` calls with an `8s` timeout and standard browser `Accept` / `Accept-Language` headers.
+   - Extracts `application/ld+json` (`@type: Product`), `og:title`, `og:description`, `product:price:amount`, canonical URL, and visible specification snippets, and resolves shortened `amzn.in` / `fkrt.it` redirects automatically on the server.
+2. **Gemini Grounded Synthesis (`@google/genai`)**:
+   - Calls `gemini-3.8-flash` on the server (`User-Agent: 'aistudio-build'`) configured with `tools: [{ urlContext: {} }, { googleSearch: {} }]`, feeding both the target URL and any server-extracted HTML/JSON-LD metadata so Gemini can read the page and cross-check independent reviews/pricing even when direct scraping hits a marketplace bot wall.
+   - Uses the existing key sanitizer and circuit-breaker (`isGeminiKeyUsable` / `classifyGeminiError`) so missing, placeholder, or quota-limited keys fall back instantaneously to deterministic page + slug + catalog heuristic synthesis without throwing UI errors.

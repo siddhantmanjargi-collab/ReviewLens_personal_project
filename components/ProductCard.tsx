@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Star, Heart, CheckSquare, Square, ShieldCheck, AlertTriangle, ExternalLink } from "lucide-react";
 import type { ProductRecord } from "@/lib/types";
+import { extractStoreLabel } from "@/lib/links";
 import { ProductArtwork } from "./ProductArtwork";
 
 export interface ProductSnapshotSummary {
@@ -56,6 +57,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const topPro = snapshot?.aspects?.find((a) => a.positivePercent >= 60)?.aspectName;
   const specList = Object.entries(product.specs ?? {}).slice(0, 4);
   const auditedCount = reviewCountLoaded ?? snapshot?.reviewsAnalyzed ?? 6;
+  const storeLabel = extractStoreLabel(product.sourceUrl, product.source);
 
   if (viewMode === "list") {
     return (
@@ -221,7 +223,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-slate-900 dark:hover:text-white font-medium whitespace-nowrap"
                 >
-                  Amazon.in <ExternalLink className="w-3 h-3" />
+                  {storeLabel} <ExternalLink className="w-3 h-3" />
                 </a>
               )}
               {product.officialUrl && (
@@ -374,10 +376,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               href={product.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              title="Open verified Amazon.in product page"
+              title={`Open ${storeLabel} product page`}
               className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors whitespace-nowrap shrink-0"
             >
-              Amazon.in <ExternalLink className="w-3 h-3" />
+              {storeLabel} <ExternalLink className="w-3 h-3" />
             </a>
           )}
           <button

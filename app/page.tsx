@@ -26,9 +26,7 @@ import { BuyerProfileSection } from "@/components/BuyerProfileSection";
 import { ProductCard, type ProductSnapshotSummary } from "@/components/ProductCard";
 import { ProductDetailModal } from "@/components/ProductDetailModal";
 import { CompareSection } from "@/components/CompareSection";
-import { ImportModal } from "@/components/ImportModal";
-import { ReviewTesterSection } from "@/components/ReviewTesterSection";
-import { EvaluationSection } from "@/components/EvaluationSection";
+import { LinkAnalyzerSection } from "@/components/LinkAnalyzerSection";
 import { heroShowcaseImg } from "@/components/ProductArtwork";
 
 const SESSION_TOKEN_STORAGE_KEY = "rl_session_token";
@@ -95,9 +93,9 @@ export default function StorefrontPage() {
   const [shortlistIds, setShortlistIds] = useState<string[]>([]);
   const [compareNotice, setCompareNotice] = useState<string | null>(null);
 
-  // Modals
+  // Modal & Link Analyzer focus trigger
   const [selectedProduct, setSelectedProduct] = useState<ProductRecord | null>(null);
-  const [importModalOpen, setImportModalOpen] = useState(false);
+  const [analyzerFocusTrigger, setAnalyzerFocusTrigger] = useState(0);
 
   const lastSyncedSignatureRef = useRef<string>("");
 
@@ -360,7 +358,6 @@ export default function StorefrontPage() {
     setAuthUser(null);
     setSessionToken(null);
     setSelectedProduct(null);
-    setImportModalOpen(false);
     setCompareNotice(null);
     setShortlistIds([]);
     setCompareIds([]);
@@ -693,7 +690,10 @@ export default function StorefrontPage() {
           shortlistCount={shortlistIds.length}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
-          onOpenImport={() => setImportModalOpen(true)}
+          onOpenAnalyzer={() => {
+            setActiveSection("analyzer");
+            setAnalyzerFocusTrigger((n) => n + 1);
+          }}
           username={authUser.username}
           onSignOut={handleSignOut}
         />
@@ -703,11 +703,10 @@ export default function StorefrontPage() {
           {(
             [
               { id: "catalog", label: `Catalog (${catalogItems.length || 30})` },
+              { id: "analyzer", label: "Link Analyzer" },
               { id: "profile", label: "Buyer Profile" },
               { id: "shortlist", label: `Shortlist (${shortlistIds.length})` },
               { id: "compare", label: `Compare (${compareIds.length})` },
-              { id: "benchmarks", label: "Benchmarks" },
-              { id: "tester", label: "Review Lab" },
             ] as { id: ActiveSection; label: string }[]
           ).map((tab) => (
             <button
@@ -1276,9 +1275,20 @@ export default function StorefrontPage() {
             />
           )}
 
-          {/* Ground-Truth Evaluation & Catalog Shill-Ring Forensics */}
-          {activeSection === "benchmarks" && (
-            <EvaluationSection onSelectProductById={selectProductById} />
+          {/* Product Link Analyzer & Reliability Inspector */}
+          {activeSection === "analyzer" && (
+            <LinkAnalyzerSection
+              sessionToken={sessionToken}
+              shortlistIds={shortlistIds}
+              compareIds={compareIds}
+              focusTrigger={analyzerFocusTrigger}
+              onToggleShortlist={toggleShortlist}
+              onToggleCompare={toggleCompare}
+              onSelectProductById={selectProductById}
+              onProductSavedToCatalog={async () => {
+                await loadCatalog();
+              }}
+            />
           )}
 
           {/* Favourites-Driven Buyer Profile & Saved Shortlist Workspace */}
@@ -1321,9 +1331,6 @@ export default function StorefrontPage() {
               onUpdatePreferences={handleUpdateProfilePreferences}
             />
           )}
-
-          {/* Live Review Authenticity & Segregation Lab */}
-          {activeSection === "tester" && <ReviewTesterSection catalogItems={catalogItems} />}
         </main>
 
         {/* Sticky Bottom Compare Tray */}
@@ -1397,13 +1404,6 @@ export default function StorefrontPage() {
             onRefreshCatalog={loadCatalog}
           />
         )}
-
-        {/* Add Amazon/Flipkart Link Modal */}
-        <ImportModal
-          isOpen={importModalOpen}
-          onClose={() => setImportModalOpen(false)}
-          onImportSuccess={loadCatalog}
-        />
       </div>
     </div>
   );
