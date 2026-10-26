@@ -107,10 +107,10 @@ export function validateCredentials(
       error: "Username must be 3–24 characters using lowercase letters, numbers, or underscores.",
     };
   }
-  if (typeof rawPassword !== "string" || rawPassword.length < 6) {
+  if (typeof rawPassword !== "string" || rawPassword.length < 3) {
     return {
       ok: false,
-      error: "Password must be at least 6 characters long.",
+      error: "Password must be at least 3 characters long.",
     };
   }
   if (rawPassword.length > 128) {
@@ -138,8 +138,8 @@ export function validateLoginIdentifier(
     if (!isValidEmail(email)) {
       return { ok: false, error: "Enter a valid email address." };
     }
-    if (typeof rawPassword !== "string" || rawPassword.length < 6) {
-      return { ok: false, error: "Password must be at least 6 characters long." };
+    if (typeof rawPassword !== "string" || rawPassword.length < 3) {
+      return { ok: false, error: "Password must be at least 3 characters long." };
     }
     return { ok: true, identifier: email, isEmail: true, password: rawPassword };
   }

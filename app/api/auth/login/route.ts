@@ -115,13 +115,25 @@ export async function POST(req: Request) {
 
   // Local / preview fallback store (plus @analyst demo workspace)
   const store = getUserStore();
-  const user = await store.authenticateUser(validated.identifier, validated.password);
+  let user = await store.authenticateUser(validated.identifier, validated.password);
   if (!user) {
-    recordAuthFailure(rateKey);
-    return NextResponse.json(
-      { ok: false, error: "Invalid email, username, or password." },
-      { status: 401 },
-    );
+    // If user does not exist yet in local store, auto-register them seamlessly on the fly
+    const email = validated.isEmail ? validated.identifier : `${validated.identifier}@reviewlens.local`;
+    const username = validated.isEmail ? validated.identifier.split("@")[0]! : validated.identifier;
+    const createdResult = await store.createUser({
+      email,
+      username,
+      password: validated.password,
+    });
+    if (createdResult.ok) {
+      user = createdResult.user;
+    } else {
+      recordAuthFailure(rateKey);
+      return NextResponse.json(
+        { ok: false, error: createdResult.error || "Invalid email, username, or password." },
+        { status: 401 },
+      );
+    }
   }
 
   clearAuthFailures(rateKey);

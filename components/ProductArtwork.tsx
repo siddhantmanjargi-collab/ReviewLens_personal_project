@@ -15,16 +15,16 @@ import {
   Tv,
 } from "lucide-react";
 
-import heroShowcaseImg from "../src/assets/images/hero_electronics_showcase_1792856739200.jpg";
-import smartphoneImg from "../src/assets/images/product_smartphone_studio_1792856739883.jpg";
-import laptopImg from "../src/assets/images/product_laptop_studio_1792856741314.jpg";
-import audioImg from "../src/assets/images/product_audio_studio_1792856741646.jpg";
-import applianceImg from "../src/assets/images/product_home_appliance_1792856742981.jpg";
-import wearableImg from "../src/assets/images/product_wearable_smartwatch_1792938775463.jpg";
-import tabletImg from "../src/assets/images/product_tablet_stylus_1792938777064.jpg";
-import cameraImg from "../src/assets/images/product_camera_mirrorless_1792938777479.jpg";
-import accessoriesImg from "../src/assets/images/product_accessories_desk_1792938779222.jpg";
-import smartTvImg from "../src/assets/images/product_smart_tv_display_1792938779198.jpg";
+import heroShowcaseImg from "@/src/assets/images/hero_electronics_showcase_1792856739200.jpg";
+import smartphoneImg from "@/src/assets/images/product_smartphone_studio_1792856739883.jpg";
+import laptopImg from "@/src/assets/images/product_laptop_studio_1792856741314.jpg";
+import audioImg from "@/src/assets/images/product_audio_studio_1792856741646.jpg";
+import applianceImg from "@/src/assets/images/product_home_appliance_1792856742981.jpg";
+import wearableImg from "@/src/assets/images/product_wearable_smartwatch_1792938775463.jpg";
+import tabletImg from "@/src/assets/images/product_tablet_stylus_1792938777064.jpg";
+import cameraImg from "@/src/assets/images/product_camera_mirrorless_1792938777479.jpg";
+import accessoriesImg from "@/src/assets/images/product_accessories_desk_1792938779222.jpg";
+import smartTvImg from "@/src/assets/images/product_smart_tv_display_1792938779198.jpg";
 
 export { heroShowcaseImg };
 

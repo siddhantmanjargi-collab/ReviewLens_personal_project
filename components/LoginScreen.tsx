@@ -16,6 +16,7 @@ import {
   Mail,
   Moon,
   Sun,
+  Zap,
 } from "lucide-react";
 import { heroShowcaseImg } from "@/components/ProductArtwork";
 
@@ -143,6 +144,37 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
     setTimeout(() => {
       submitButtonRef.current?.focus();
     }, 30);
+  };
+
+  const handleQuick1ClickSignIn = async () => {
+    setMode("login");
+    setIdentifier("analyst");
+    setPassword("reviewlens");
+    setErrorMessage(null);
+    setHelperNotice(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ identifier: "analyst", password: "reviewlens" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (data?.ok && data?.user) {
+        onAuthenticated(
+          data.user as AuthenticatedSessionUser,
+          typeof data.sessionToken === "string" ? data.sessionToken : null,
+          Boolean(data.supabaseConfigured),
+        );
+      } else {
+        setErrorMessage("Could not complete quick sign in. Try entering analyst and reviewlens.");
+      }
+    } catch {
+      setErrorMessage("Network error during quick sign in.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleOAuthSignIn = async (provider: "google" | "github") => {
@@ -583,7 +615,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
                 </h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
                   {mode === "login" &&
-                    "Sign in with your email, @username, or connected social account."}
+                    "Enter any username or email with any password to sign in or auto-create your account instantly."}
                   {mode === "register" &&
                     "Sync your relational favourites and unlock automatic Buyer Profile rankings."}
                   {mode === "otp" &&
@@ -594,6 +626,22 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
                       : "Update the password on your local preview account.")}
                 </p>
               </div>
+
+              {mode === "login" && (
+                <button
+                  type="button"
+                  onClick={handleQuick1ClickSignIn}
+                  disabled={submitting}
+                  className="w-full min-h-[44px] py-2.5 px-4 text-xs font-bold text-slate-900 bg-amber-400 hover:bg-amber-500 dark:bg-amber-400 dark:hover:bg-amber-300 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer disabled:opacity-60 active:scale-[0.99]"
+                >
+                  {submitting ? (
+                    <Loader2 className="w-4 h-4 animate-spin text-slate-900" />
+                  ) : (
+                    <Zap className="w-4 h-4 text-slate-900 fill-slate-900" />
+                  )}
+                  <span>⚡ 1-Click Demo Sign In</span>
+                </button>
+              )}
 
               {/* OAuth Social Buttons (visible on Sign In & Sign Up) */}
               {(mode === "login" || mode === "register") && (
