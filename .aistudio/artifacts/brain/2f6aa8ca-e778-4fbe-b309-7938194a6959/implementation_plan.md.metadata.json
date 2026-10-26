@@ -1,0 +1,6 @@
+{
+  "summary":  "Architectural and UX plan to eliminate Gemini API_KEY_INVALID runtime errors, implement an automatic server-side API key sanitizer and circuit breaker, cross-check buyer claims locally against product specifications and review aspect sentiment when live Google Search grounding is unavailable, and surface a subtle Settings > Secrets status note across diagnostic views.",
+  "updatedAt":  "2026-10-26T10:15:43.516363205Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

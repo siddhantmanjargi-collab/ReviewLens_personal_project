@@ -1,0 +1,4752 @@
+{
+  "_readme": "180 product-specific customer reviews across all 30 real Indian catalog ASINs, grounded in verified buyer praise, documented complaints, star-sentiment mismatches, and promotional spam patterns.",
+  "generatedAt": "2026-10-25T11:55:00.000Z",
+  "reviewsByAsin": {
+    "B0CHX1W1XY": [
+      {
+        "title": "48MP main camera and USB-C finally make upgrading from iPhone 12 worth it",
+        "text": "Switched from an iPhone 12 during the Amazon Great Indian Festival. The 48MP default 24MP output captures far better skin texture and dynamic range in evening street lights, and carrying a single USB-C cable for both my MacBook and phone is a relief. Getting 6.5 hours of screen-on time on Jio 5G.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Karthik Subramanian",
+        "daysAgo": 4,
+        "helpful": 89,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "camera",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Cites specific 24MP/48MP pipeline and Jio 5G 6.5h SOT",
+          "Authentic upgrade comparison"
+        ]
+      },
+      {
+        "title": "Great compact flagship, but 60Hz screen at ₹70k feels dated",
+        "text": "Matte frosted back glass and contoured aluminum edges feel far nicer in hand than the sharp iPhone 14 edges. Dynamic Island is genuinely handy for Zomato delivery timers and Uber rides. Still, scrolling side-by-side next to a ₹30k 120Hz Android makes the 60Hz panel noticeable.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Ritika Malhotra",
+        "daysAgo": 9,
+        "helpful": 64,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.89
+          },
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Balanced praise of ergonomics vs 60Hz refresh rate critique",
+          "Mentions real Indian app workflows"
+        ]
+      },
+      {
+        "title": "Warms up during 20W charging and summer outdoor 4K video",
+        "text": "Updated to the latest iOS build right out of the box. Indoor daily performance is effortless, but plugging into Apple's 20W adapter up to 80% makes the left frame warm, and shooting 10 minutes of 4K60 outdoors in Pune afternoon heat dims the screen brightness.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Saurabh Kulkarni",
+        "daysAgo": 15,
+        "helpful": 41,
+        "sentiment": "neutral",
+        "confidence": 0.88,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.86
+          },
+          {
+            "name": "thermals",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.84
+          }
+        ],
+        "signals": [
+          "Pinpoints charging threshold (80%) and 4K60 thermal dimming"
+        ]
+      },
+      {
+        "title": "128GB fills up fast with Pro-res photos and no charger in box",
+        "text": "Between iOS system data, WhatsApp backups, and 24MP HEIF/4K clips from one Goa trip, 78GB was gone in two weeks. USB-C transfer speed is capped at USB 2.0 (480 Mbps), so copying 30GB of videos to SSD took ages.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Nikhil Tandon",
+        "daysAgo": 21,
+        "helpful": 33,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "storage",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "transfer speed",
+            "sentiment": "negative",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Cites exact USB 2.0 480 Mbps hardware limitation"
+        ]
+      },
+      {
+        "title": "Tapped 5 stars accidentally — box seal was torn and battery drains overnight",
+        "text": "Meant to give 2 stars on mobile app. Open-box delivery passed OTP check, but overnight idle drain on Airtel 5G drops 18% in 7 hours even with Background App Refresh turned off. Service centre asked me to reset DFU.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Pooja Deshpande",
+        "daysAgo": 12,
+        "helpful": 19,
+        "sentiment": "negative",
+        "confidence": 0.95,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "packaging",
+            "sentiment": "negative",
+            "confidence": 0.82
+          }
+        ],
+        "signals": [
+          "Star rating (5★) contradicts negative complaint text",
+          "Specific 18% overnight idle drain detail"
+        ]
+      },
+      {
+        "title": "BEST IPHONE EVER 100% ORIGINAL MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME APPLE PRODUCT BEST PHONE IN WORLD JUST BUY IT DONT MISS SUPERB CAMERA VALUE FOR MONEY TRUST ME 5 STARS HIGHLY RECOMMEND!!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.92,
+        "aspects": [
+          {
+            "name": "camera",
+            "sentiment": "positive",
+            "confidence": 0.62
+          }
+        ],
+        "signals": [
+          "All-caps promotional shouting",
+          "Stacked stock phrases without usage details",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CS5XW6TN": [
+      {
+        "title": "Gorilla Armor anti-reflective screen is a game changer outdoors",
+        "text": "The flat QHD+ display kills ceiling-light and sunlight reflections better than any phone I have owned. Snapdragon 8 Gen 3 stays cool on dual SIM 5G, S Pen is clutch for signing PDFs on the move, and 5x optical portrait shots at weddings look DSLR-clean.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Vikramaditya Sen",
+        "daysAgo": 5,
+        "helpful": 112,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "camera",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Specific Gorilla Armor reflection and 5x optical telephoto observations"
+        ]
+      },
+      {
+        "title": "Powerhouse flagship, though sharp corners dig into palm one-handed",
+        "text": "Battery comfortably finishes heavy workdays with 30% left after 7 hours of SOT, and Circle to Search saves me dozens of copy-pastes daily. Only ergonomic downside: at 232g with sharp 90-degree corners, pinky-finger fatigue is real without a rounded case.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Shruti Ramanathan",
+        "daysAgo": 11,
+        "helpful": 58,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.9
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Mentions exact 232g weight and boxy corner ergonomics"
+        ]
+      },
+      {
+        "title": "Indoor shutter lag still blurs moving toddlers and pets",
+        "text": "Landscapes and stationary 5x zoom shots are phenomenal, but indoors under warm living-room LEDs Samsung's default shutter speed is still too slow—my toddler's face blurs unless I switch to Pro mode at 1/250s.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Gaurav Chhabra",
+        "daysAgo": 18,
+        "helpful": 47,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "camera",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Known S24 Ultra indoor shutter speed critique with 1/250s Pro workaround"
+        ]
+      },
+      {
+        "title": "Grainy dark grey uniformity at minimum brightness at night",
+        "text": "Paid ₹1.22 lakh expecting display perfection, but in a pitch-dark bedroom at 5% brightness dark-mode grey menus show faint denim-like mura grain. Also requires buying Samsung's 45W PD PPS brick and 5A cable separately.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Anirudh Bose",
+        "daysAgo": 26,
+        "helpful": 39,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "price",
+            "sentiment": "negative",
+            "confidence": 0.86
+          }
+        ],
+        "signals": [
+          "References low-brightness mura grain and 45W PPS 5A cable requirement"
+        ]
+      },
+      {
+        "title": "Clicked 1 star by mistake — absolute beast for productivity!",
+        "text": "Sorry for the 1-star rating tap, meant 5 stars! Samsung DeX on my monitor + S Pen note transcription in Hindi/English meetings works flawlessly and 7 years of OS updates justifies the investment.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Deepak Nambiar",
+        "daysAgo": 14,
+        "helpful": 15,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "1★ rating strongly mismatches glowing positive text"
+        ]
+      },
+      {
+        "title": "Superb nice phone best product value for money must buy!",
+        "text": "Very good nice product best phone ever five stars awesome superb quality go for it dont miss best deal!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 1,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock praise string",
+          "Zero device-specific details",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0D7W9R1HM": [
+      {
+        "title": "5500mAh battery + 100W brick in the box spoils you completely",
+        "text": "Plugged in at 8% while brushing my teeth and hit 100% in 27 minutes flat using the bundled 100W SUPERVOOC charger. Snapdragon 8 Gen 2 runs BGMI at 90fps smoothly, and the Alert Slider + IR blaster for my Voltas AC are super practical.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Abhishek Verma",
+        "daysAgo": 3,
+        "helpful": 96,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "charging",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Exact 8%-to-100% in 27 min charging benchmark and IR blaster detail"
+        ]
+      },
+      {
+        "title": "Flagship display and speed, average ultrawide and macro cameras",
+        "text": "Main Sony IMX890 sensor with OIS takes punchy daylight and decent night shots, and Aqua Touch actually works when my hands are wet. However, the 8MP ultrawide gets soft at edges and the 2MP macro lens is pure filler.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Snehal Joshi",
+        "daysAgo": 10,
+        "helpful": 52,
+        "sentiment": "positive",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "camera",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Distinguishes IMX890 main sensor from 8MP ultrawide and 2MP macro"
+        ]
+      },
+      {
+        "title": "Curved screen makes tempered glass tricky and no wireless charging",
+        "text": "Performance per rupee is unbeatable, but finding a bubble-free tempered glass for the curved edgeswithout UV glue mess is annoying, and the glossy back picks up smudges instantly without the Sandstone case.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Pranav Shetty",
+        "daysAgo": 19,
+        "helpful": 28,
+        "sentiment": "neutral",
+        "confidence": 0.87,
+        "geminiRisk": 0.1,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "neutral",
+            "confidence": 0.84
+          },
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "Practical curved screen protector and smudge feedback"
+        ]
+      },
+      {
+        "title": "Throttles brightness after 40 minutes of Genshin Impact",
+        "text": "Bought specifically for heavy gaming. First half hour is locked 60fps, then chassis hits ~43C and OxygenOS dims peak brightness aggressively even indoors under AC.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Rohan Saini",
+        "daysAgo": 24,
+        "helpful": 22,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "thermals",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.82
+          }
+        ],
+        "signals": [
+          "Specific 40-minute 43C thermal throttling observation"
+        ]
+      },
+      {
+        "title": "5 stars selected in error — received 128GB UFS 3.1 speed confusion",
+        "text": "Accidentally left 5 stars. Phone lags briefly when switching camera lenses in 4K and pre-installed FinShell Pay / App Market notifications needed manual disabling on day one.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Mayank Tiwari",
+        "daysAgo": 16,
+        "helpful": 14,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.15,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.9
+          },
+          {
+            "name": "camera",
+            "sentiment": "negative",
+            "confidence": 0.83
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts negative software/camera lag complaints"
+        ]
+      },
+      {
+        "title": "BEST KILLER PHONE MUST BUY 100% GENUINE FIVE STARS!!!",
+        "text": "SUPERB AWESOME PHONE BEST EVER IN INDIA JUST BUY IT DONT THINK TWICE HIGHLY RECOMMEND FIVE STARS VALUE FOR MONEY!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.9,
+        "aspects": [],
+        "signals": [
+          "Promotional all-caps stock phrases",
+          "Zero hardware specifics"
+        ]
+      }
+    ],
+    "B0DLHH4BJ9": [
+      {
+        "title": "16GB unified RAM makes this M3 Air effortless for Docker + Xcode",
+        "text": "So glad Apple bumped this SKU to 16GB RAM. Running Docker containers, 30 Arc tabs, Figma, and VS Code simultaneously stays completely silent with zero fan noise, and battery lasts 14.5 hours across two workdays without carrying the MagSafe brick.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Siddharth Menon",
+        "daysAgo": 6,
+        "helpful": 77,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "thermals",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Specific 16GB M3 developer workload and 14.5h battery metric"
+        ]
+      },
+      {
+        "title": "Dual external monitor clamshell mode works, but only 2 USB-C ports",
+        "text": "Closing the lid now drives both my 4K Dell monitors cleanly on M3, and the faster dual-NAND 256GB SSD hits ~2100 MB/s read. Still annoying that both Thunderbolt ports sit on the left side and there is no HDMI or USB-A without a hub.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Aditi Sengupta",
+        "daysAgo": 13,
+        "helpful": 49,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "neutral",
+            "confidence": 0.89
+          },
+          {
+            "name": "transfer speed",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "References M3 dual-NAND 256GB speed fix and clamshell dual-display"
+        ]
+      },
+      {
+        "title": "Midnight finish still picks up palm oils despite anodized seal",
+        "text": "The keyboard scissor switches and Force Touch trackpad are unmatched, but even with the updated anodization seal on M3 Midnight, humid Mumbai weather leaves visible palm smudges around the trackpad deck every afternoon.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Harshvardhan Patil",
+        "daysAgo": 20,
+        "helpful": 31,
+        "sentiment": "neutral",
+        "confidence": 0.88,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "keyboard",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.86
+          }
+        ],
+        "signals": [
+          "Specific M3 Midnight anodization smudge observation"
+        ]
+      },
+      {
+        "title": "256GB storage feels cramped at ₹1.05 lakh and AppleCare+ is steep",
+        "text": "macOS + Xcode simulators ate 95GB on day two, forcing me to Velcro an external SSD to the lid. Paying ₹20,000 extra just to jump from 256GB to 512GB in 2026 feels unreasonable.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Karanveer Gill",
+        "daysAgo": 28,
+        "helpful": 36,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "storage",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "price",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Concrete Xcode storage footprint and upgrade pricing critique"
+        ]
+      },
+      {
+        "title": "Rated 5 stars by mistake — shipped with 30W single-port adapter",
+        "text": "Meant 2 stars: charging from 10% to 80% with the bundled 30W brick takes nearly two hours while working, and external NTFS drives from college lab needed third-party drivers.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Neha Rajagopal",
+        "daysAgo": 17,
+        "helpful": 12,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.92
+          },
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.81
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches slow 30W charging complaint"
+        ]
+      },
+      {
+        "title": "BEST LAPTOP IN INDIA 100% SUPERB MUST BUY FIVE STARS!!!",
+        "text": "AWESOME MACBOOK BEST PRODUCT EVER VALUE FOR MONEY JUST BUY IT DONT MISS FIVE STARS SUPERB QUALITY!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "Generic promotional shouting",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0BRYYGD6Z": [
+      {
+        "title": "600-nit 100% DCI-P3 OLED panel puts ₹80k IPS laptops to shame",
+        "text": "Bought at ₹56,990 for Lightroom photo editing and coding. Deep blacks and Pantone-validated colors on the 15.6-inch OLED are breathtaking, and the 45W H-series i5-12500H compiles Java builds twice as fast as U-series chips. Thunderbolt 4 port is a huge bonus.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Tanmay Gokhale",
+        "daysAgo": 5,
+        "helpful": 63,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Cites 45W H-series i5-12500H, Pantone OLED, and Thunderbolt 4"
+        ]
+      },
+      {
+        "title": "Punchy screen and fast SSD, but speakers are quiet under ceiling fan",
+        "text": "MyASUS OLED pixel refresh care gives peace of mind against burn-in, and fingerprint login on the power key never misses. Downward-firing speakers lack volume if a ceiling fan is spinning at full speed—keep earphones handy.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Pallavi Nair",
+        "daysAgo": 12,
+        "helpful": 35,
+        "sentiment": "positive",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "speakers",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Mentions MyASUS OLED burn-in care and real room acoustics"
+        ]
+      },
+      {
+        "title": "H-series CPU + OLED limits unplugged battery to ~4.5 hours",
+        "text": "Metal lid feels premium while the polycarbonate base has minor flex. In Whisper fan mode at 60% brightness with dark mode enabled, battery lasts 4 to 4.5 hours of Chrome and Docs—carry the 90W charger for full college days.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Rishabh Jain",
+        "daysAgo": 19,
+        "helpful": 29,
+        "sentiment": "neutral",
+        "confidence": 0.88,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "neutral",
+            "confidence": 0.84
+          },
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Realistic 4.5h battery metric for 45W H-series + OLED"
+        ]
+      },
+      {
+        "title": "720p webcam looks grainy on Teams calls and glossy screen reflects tube lights",
+        "text": "Unlike matte IPS screens, the glossy glass OLED acts like a mirror if an office window or tube light is behind your chair, and the 720p webcam looks noisy in indoor lighting.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Swati Bhardwaj",
+        "daysAgo": 27,
+        "helpful": 21,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.86
+          },
+          {
+            "name": "camera",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Specific glossy OLED glare and 720p webcam critique"
+        ]
+      },
+      {
+        "title": "Clicked 1 star accidentally — best OLED laptop under 60k!",
+        "text": "Oops hit 1 star on touch screen! Watching HDR movies on this OLED screen is cinema-grade and keyboard travel is super comfortable for writing long reports.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Varun Kulkarni",
+        "daysAgo": 14,
+        "helpful": 11,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.13,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "keyboard",
+            "sentiment": "positive",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "1★ star rating contradicts enthusiastic praise"
+        ]
+      },
+      {
+        "title": "Nice laptop good product value for money five stars must buy!",
+        "text": "Very good nice product awesome laptop best ever in budget go for it trust me five stars superb!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.93,
+        "geminiRisk": 0.88,
+        "aspects": [],
+        "signals": [
+          "Generic stock phrases",
+          "Zero technical details"
+        ]
+      }
+    ],
+    "B0CNVH114V": [
+      {
+        "title": "Snappy i5-12450H + 16GB LPDDR5 handles CA articleship Excel sheets effortlessly",
+        "text": "Heavy 80MB Excel workbooks with macros, Tally Prime, and 20 browser tabs run with zero stutter. Physical webcam privacy shutter and included MS Office Home & Student lifetime license saved extra money.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Manoj Agrawal",
+        "daysAgo": 7,
+        "helpful": 54,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.89
+          },
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Specific Tally Prime + 80MB macro workbook workload"
+        ]
+      },
+      {
+        "title": "Comfortable Lenovo keyboard, but 45% NTSC screen colors look muted",
+        "text": "Lenovo's curved keycaps are a joy to type on for hours and 1.62kg weight fits easily in a commuter backpack. Screen is anti-glare IPS so viewing angles are fine, though reds look slightly orange due to the 45% NTSC gamut.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Divya Venkatesh",
+        "daysAgo": 13,
+        "helpful": 38,
+        "sentiment": "positive",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "keyboard",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "portability",
+            "sentiment": "positive",
+            "confidence": 0.89
+          },
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Accurately notes 45% NTSC color gamut vs IPS viewing angles"
+        ]
+      },
+      {
+        "title": "Soldered 16GB LPDDR5 RAM cannot be upgraded later",
+        "text": "Thankfully it ships with 16GB dual-channel out of the box because the LPDDR5 memory is soldered to the motherboard with no SO-DIMM slot. Battery averages 3.5 to 4 hours on Wi-Fi.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "chetan_k",
+        "daysAgo": 22,
+        "helpful": 26,
+        "sentiment": "neutral",
+        "confidence": 0.87,
+        "geminiRisk": 0.09,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.83
+          },
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Specific soldered LPDDR5 motherboard detail and 4h battery"
+        ]
+      },
+      {
+        "title": "Plastic chassis flexes near keyboard center and McAfee popups annoy",
+        "text": "Pressing firmly near the G and H keys causes noticeable plastic deck flex, and pre-installed McAfee trial + Lenovo Vantage promotional banners pestered me until uninstalled.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Arvind Pillai",
+        "daysAgo": 30,
+        "helpful": 19,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.92
+          },
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Pinpoints G/H key deck flex and McAfee bloatware"
+        ]
+      },
+      {
+        "title": "5 stars tapped wrongly — barrel charger pin feels loose in port",
+        "text": "Selected 5 stars by accident. The round barrel power plug wiggles slightly in the left charging jack and disconnects if I shift the laptop on my lap.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Kavita Rao",
+        "daysAgo": 15,
+        "helpful": 10,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.9
+          },
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "5★ star rating contradicts hardware port complaint"
+        ]
+      },
+      {
+        "title": "SUPERB LENOVO LAPTOP BEST EVER MUST BUY 100% GENUINE!!!",
+        "text": "BEST PRODUCT VALUE FOR MONEY FIVE STARS AWESOME LAPTOP JUST BUY DONT MISS SUPERB QUALITY!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps promotional spam",
+          "No product specifics"
+        ]
+      }
+    ],
+    "B09XS7JWHH": [
+      {
+        "title": "Silences Indigo cabin engine drone and open-office chatter like magic",
+        "text": "Flew Bengaluru to Delhi twice this week with the XM5s—cabin roar disappears by ~85% and 250g synthetic leather pads didn't clamp my glasses over 3 hours. Multipoint switch between MacBook Slack huddles and Android LDAC music is seamless.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Nandini Krishnamurthy",
+        "daysAgo": 4,
+        "helpful": 104,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "noise cancellation",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "comfort",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Flight ANC, eyeglasses clamping comfort, and LDAC multipoint details"
+        ]
+      },
+      {
+        "title": "Class-leading ANC and mics, but non-folding case eats backpack space",
+        "text": "8-mic voice isolation on busy Bengaluru roads is leagues ahead of my old XM4, and 3-minute USB-PD quick charge really gives 3 hours of playback. However, because the earcups only swivel flat instead of folding inward, the hard case is huge.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "RohitBhatia",
+        "daysAgo": 11,
+        "helpful": 69,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "call quality",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "charging",
+            "sentiment": "positive",
+            "confidence": 0.91
+          },
+          {
+            "name": "portability",
+            "sentiment": "negative",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Compares XM5 non-folding swivel case directly against XM4"
+        ]
+      },
+      {
+        "title": "Auto ANC optimizer shifts pressure unexpectedly & earcups warm up in summer",
+        "text": "Unlike XM4 where you could lock max ANC manually, XM5's Auto NC Optimizer occasionally lowers isolation until the seal resets, and synthetic leather pads get sweaty after 45 minutes without AC.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Siddhant Deshmukh",
+        "daysAgo": 18,
+        "helpful": 42,
+        "sentiment": "neutral",
+        "confidence": 0.88,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "noise cancellation",
+            "sentiment": "neutral",
+            "confidence": 0.86
+          },
+          {
+            "name": "comfort",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Specific Auto NC Optimizer behavior and warm-climate earcup heat"
+        ]
+      },
+      {
+        "title": "Stock tuning is overly muddy in upper-bass without Sony Headphones app EQ",
+        "text": "Out of the box, 100–250Hz bass bloats over male vocals and acoustic guitars. You MUST install Sony Sound Connect and drop Clear Bass to -2 with +2 on 1kHz/2.5kHz, plus there is zero IP water/sweat rating.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "akash_audiophile",
+        "daysAgo": 25,
+        "helpful": 31,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.84
+          }
+        ],
+        "signals": [
+          "Detailed Clear Bass -2 and 1kHz/2.5kHz EQ frequency feedback"
+        ]
+      },
+      {
+        "title": "Clicked 2 stars by mistake — best travel headphones I have ever bought!",
+        "text": "Apologies, slipped and tapped 2 stars! 30-hour battery easily lasted two weeks of metro commutes and Speak-to-Chat pauses music automatically when ordering coffee.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Meghna Nair",
+        "daysAgo": 13,
+        "helpful": 16,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "2★ rating contradicts glowing positive review text"
+        ]
+      },
+      {
+        "title": "SUPERB SONY HEADPHONE BEST EVER MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME SOUND BEST PRODUCT IN MARKET 100% GENUINE VALUE FOR MONEY JUST BUY DONT MISS FIVE STARS!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.6
+          }
+        ],
+        "signals": [
+          "All-caps stock hype phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CHX719JD": [
+      {
+        "title": "Adaptive Audio and Transparency mode feel like you aren't wearing earbuds",
+        "text": "H2 chip cancels local train rumble shockingly well for tiny in-ears, while Adaptive Audio automatically softens construction sirens without muting conversations. Built-in case speaker + Precision Finding saved me twice when they slipped into sofa cushions.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Zoya Merchant",
+        "daysAgo": 3,
+        "helpful": 91,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "noise cancellation",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Specific H2 Adaptive Audio and U1 Precision Finding case speaker details"
+        ]
+      },
+      {
+        "title": "Brilliant for iPhone/Mac users, buy a silicone case on day one",
+        "text": "USB-C + Apple Watch puck charging flexibility is super convenient and XS ear tips finally fit small ear canals. Be warned: the glossy white case picked up hairline micro-scratches in my jeans coin pocket within 48 hours.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Tarun Khanna",
+        "daysAgo": 9,
+        "helpful": 53,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "comfort",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "charging",
+            "sentiment": "positive",
+            "confidence": 0.91
+          },
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Mentions XS ear tips, Watch charger compatibility, and glossy case scratches"
+        ]
+      },
+      {
+        "title": "Crippled feature set if you pair them with an Android phone",
+        "text": "Sound and ANC hardware work fine on my Pixel, but you lose Spatial Audio head tracking, ear tip fit test, Conversation Awareness, firmware updates, and battery pop-ups without borrowing an iOS device.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "vivek_rao",
+        "daysAgo": 17,
+        "helpful": 37,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "Concrete cross-platform Android limitation breakdown"
+        ]
+      },
+      {
+        "title": "Slip out during sweaty treadmill runs despite trying M and L tips",
+        "text": "For desk work they are great, but once you start sweating during a 5km run without wingtips, the smooth stems slowly work loose every 5 minutes and stem volume swipes trigger pauses by accident.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Ashwin Menon",
+        "daysAgo": 23,
+        "helpful": 28,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "comfort",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Specific workout sweat fit slip and stem swipe critique"
+        ]
+      },
+      {
+        "title": "5 stars left by mistake — right earbud stopped charging until contacts cleaned",
+        "text": "Tapped 5 stars in error. After two weeks right bud stayed at 0% inside the case because dust on the deep copper pin blocked contact; also record full unboxing video on Amazon India.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Shreya Kulkarni",
+        "daysAgo": 14,
+        "helpful": 19,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches right-earbud charging failure text"
+        ]
+      },
+      {
+        "title": "Nice product good product awesome airpods five stars must buy!",
+        "text": "Superb sound best earbuds ever value for money 100% genuine trust me go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.89,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.61
+          }
+        ],
+        "signals": [
+          "Stacked stock phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CD33CX5F": [
+      {
+        "title": "Separate tweeter makes vocals way crisper than Flip 5 + survived Coorg rain",
+        "text": "Took this on a monsoon trek in Coorg—got splashed with mud, rinsed directly under a tap thanks to IP67 sealing, and kept playing cleanly. Adding the dedicated 10W tweeter alongside the 20W racetrack woofer adds real sparkle to vocals.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Nitin Gowda",
+        "daysAgo": 6,
+        "helpful": 72,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.97
+          }
+        ],
+        "signals": [
+          "Compares 20W+10W driver upgrade vs Flip 5 and real IP67 rinse test"
+        ]
+      },
+      {
+        "title": "Punchy room-filling bass, though battery drops to ~5.5h above 80% volume",
+        "text": "Fills a 20x15 ft terrace easily for house gatherings and JBL Portable 3-band EQ lets you tame bass indoors. Note that the advertised 12-hour battery is at ~50% volume; pushing 80–90% outdoors drains it in ~5.5 hours.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Ayesha Siddiqui",
+        "daysAgo": 12,
+        "helpful": 44,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "battery",
+            "sentiment": "neutral",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Quantifies 5.5h high-volume vs 12h rated battery runtime"
+        ]
+      },
+      {
+        "title": "No 3.5mm AUX input and no built-in speakerphone mic",
+        "text": "Audio quality is great for Bluetooth streaming, but JBL removed the 3.5mm AUX jack so I cannot wire it to my desktop monitor, and there is no microphone for taking hands-free phone calls.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "SandeepChawla",
+        "daysAgo": 20,
+        "helpful": 31,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "sound quality",
+            "sentiment": "positive",
+            "confidence": 0.84
+          }
+        ],
+        "signals": [
+          "Cites missing 3.5mm AUX port and missing speakerphone mic"
+        ]
+      },
+      {
+        "title": "Mono output sounds compressed on rock tracks above 85% volume",
+        "text": "DSP limiter kicks in hard past 85% volume, squashing electric guitars in dense rock mixes, and PartyBoost does NOT pair with older JBL Connect+ speakers like my Charge 4.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Rahul_M",
+        "daysAgo": 29,
+        "helpful": 23,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "negative",
+            "confidence": 0.9
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Specific DSP compression >85% and PartyBoost vs Connect+ incompatibility"
+        ]
+      },
+      {
+        "title": "Gave 1 star accidentally — super loud and fits right in cycle bottle cage!",
+        "text": "Hit 1 star by mistake! Cylindrical body slides straight into my MTB bottle holder and survives dusty trail rides without skipping a beat.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Kunal Kulkarni",
+        "daysAgo": 15,
+        "helpful": 12,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "portability",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts glowing trail-ride praise"
+        ]
+      },
+      {
+        "title": "AWESOME JBL SPEAKER BEST BASS EVER MUST BUY 5 STARS!!!!",
+        "text": "BEST SPEAKER IN INDIA SUPERB SOUND VALUE FOR MONEY DONT MISS JUST BUY IT FIVE STARS 100% GENUINE!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "Promotional shouting without technical specifics",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0BDK6X8MX": [
+      {
+        "title": "Fluid S8 chip, spot-on GPS pace & heart rate for 5K morning runs",
+        "text": "Paired with my iPhone 15 in 90 seconds. Outdoor GPS locks in ~7 seconds at Cubbon Park and heart-rate readings sit within 2 bpm of my Polar chest strap. At 26.4g the 40mm aluminum case disappears on my wrist while sleeping.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Anushka Hegde",
+        "daysAgo": 5,
+        "helpful": 61,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "accuracy",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "comfort",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Cross-checked within 2 bpm against Polar strap + 26.4g case weight"
+        ]
+      },
+      {
+        "title": "Best value Apple Watch, though you miss Always-On Display & fast charging",
+        "text": "Gets 90% of Series 9 daily utility—UPI/notification replies, Apple Maps wrist taps, swim tracking, and Fall Detection—for ₹15k less. Just remember screen stays off until you raise your wrist and full charge takes ~1.5 hours.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Raghavendra Rao",
+        "daysAgo": 11,
+        "helpful": 43,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "display",
+            "sentiment": "neutral",
+            "confidence": 0.86
+          },
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Balanced Series 9 feature comparison, AOD omission, and 1.5h charge time"
+        ]
+      },
+      {
+        "title": "No ECG or SpO2 sensor, and 3mm bezels show on light watch faces",
+        "text": "Stick to dark-background watch faces because colorful dials highlight the thicker 3mm display borders compared to Series 9. Also lacks ECG and Blood Oxygen sensors if buying for senior parents.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Dr_Sunil_K",
+        "daysAgo": 19,
+        "helpful": 29,
+        "sentiment": "neutral",
+        "confidence": 0.88,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.85
+          },
+          {
+            "name": "sensors",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Specific 3mm bezel and missing ECG/SpO2 sensor critique"
+        ]
+      },
+      {
+        "title": "Needs charging every single evening if you track 1 hour of GPS workouts",
+        "text": "With sleep tracking overnight + 50 minutes of outdoor GPS run + WhatsApp alerts, battery hits 12% by 8 PM daily. Record an uncut unboxing video checking Apple serial coverage when ordering online.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Prateek Malhotra",
+        "daysAgo": 26,
+        "helpful": 34,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Daily 12%-by-8PM battery drain breakdown + Indian unboxing tip"
+        ]
+      },
+      {
+        "title": "Selected 5 stars mistakenly — Ion-X glass scratched on door frame in week 1",
+        "text": "Meant to give 2 stars! Unlike Sapphire crystal watches, the Ion-X glass picked up a deep scratch brushing past a wooden cupboard latch on day six.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Kritika Sharma",
+        "daysAgo": 14,
+        "helpful": 15,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts Ion-X glass scratch complaint"
+        ]
+      },
+      {
+        "title": "SUPERB APPLE WATCH BEST EVER 100% ORIGINAL MUST BUY!!!",
+        "text": "AWESOME SMARTWATCH FIVE STARS VALUE FOR MONEY JUST BUY IT DONT MISS SUPERB QUALITY TRUST ME!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.9,
+        "aspects": [],
+        "signals": [
+          "Stock promotional hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CCV8R7ZS": [
+      {
+        "title": "Physical rotating steel bezel + Sapphire glass feels like a luxury chronograph",
+        "text": "Scrolling through tiles and WhatsApp messages with the clicky stainless-steel bezel without smudging the screen is addictive. 2000-nit Super AMOLED is razor sharp in noon sun, and Google Maps + GPay/Samsung Wallet tap-to-pay work smoothly.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Jayant Kulkarni",
+        "daysAgo": 6,
+        "helpful": 68,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Rotating bezel, 2000-nit Sapphire AMOLED, and Samsung Wallet details"
+        ]
+      },
+      {
+        "title": "Detailed sleep & BIA body composition, but expect ~30 hours per charge",
+        "text": "Skeletal muscle/fat BIA scan and sleep coaching are surprisingly consistent week-over-week. Because the 43mm model packs a smaller 300mAh cell than the 47mm, turning on AOD gives ~28–32 hours—top it up every morning while showering.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Nupur Chatterjee",
+        "daysAgo": 12,
+        "helpful": 46,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "sensors",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "battery",
+            "sentiment": "neutral",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Cites exact 300mAh cell on 43mm variant and 28-32h AOD runtime"
+        ]
+      },
+      {
+        "title": "ECG and Blood Pressure monitoring are region-locked in India!",
+        "text": "The product description highlights BioActive ECG and Blood Pressure hardware, but Samsung Health Monitor disables both in India pending regulatory clearance, and BIA also requires a Samsung Galaxy phone.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Dr_Rajeev_Menon",
+        "daysAgo": 17,
+        "helpful": 82,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "sensors",
+            "sentiment": "negative",
+            "confidence": 0.96
+          },
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Crucial India regional ECG/BP restriction documented by real buyers"
+        ]
+      },
+      {
+        "title": "Occasional UI micro-stutters waking from AOD on Exynos W930",
+        "text": "Stainless steel case is heavy (52g without strap) so it bounces on bony wrists during sprints, and Wear OS 4 occasionally drops frames for a second right after waking from sleep mode.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Varun_S",
+        "daysAgo": 25,
+        "helpful": 21,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "comfort",
+            "sentiment": "negative",
+            "confidence": 0.88
+          },
+          {
+            "name": "performance",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Mentions 52g steel case weight and Exynos W930 wake stutter"
+        ]
+      },
+      {
+        "title": "Clicked 1 star by accident — rotating bezel alone makes it 5/5!",
+        "text": "Oops hit 1 star! Upgraded from Watch4 and the thinner bezel + Sapphire crystal survived two accidental wall scrapes without a single mark.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Sameer Shaikh",
+        "daysAgo": 10,
+        "helpful": 14,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts glowing durability praise"
+        ]
+      },
+      {
+        "title": "Nice watch good product awesome quality five stars must buy!",
+        "text": "Very good nice smartwatch best ever value for money go for it five stars superb!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0B6BLTGTT": [
+      {
+        "title": "Unbeatable ₹1,199 daily beater — bright screen and clear indoor calling",
+        "text": "Bought for my college-going brother. The 1.85-inch 550-nit screen is easy to read outdoors, Bluetooth calling stays connected across rooms, and battery lasted 6 full days with notifications and 3–4 short calls daily.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Pंकज_Verma",
+        "daysAgo": 3,
+        "helpful": 79,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Specific ₹1,199 value, 550-nit visibility, and 6-day battery"
+        ]
+      },
+      {
+        "title": "Good notification companion, treat SpO2 and HR as rough estimates",
+        "text": "Quick-reply SMS presets and calculator on wrist are handy during meetings. Resting heart rate is close to my oximeter, though peak gym HR lags by 10–15 bpm and polycarbonate body feels light/plasticky.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Deepika Iyer",
+        "daysAgo": 9,
+        "helpful": 41,
+        "sentiment": "positive",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.86
+          },
+          {
+            "name": "accuracy",
+            "sentiment": "neutral",
+            "confidence": 0.87
+          },
+          {
+            "name": "build quality",
+            "sentiment": "neutral",
+            "confidence": 0.83
+          }
+        ],
+        "signals": [
+          "Realistic oximeter vs workout HR lag comparison"
+        ]
+      },
+      {
+        "title": "Counts 900 fake steps during a 20-minute bumpy auto-rickshaw commute",
+        "text": "Pedometer algorithm is overly sensitive to wrist vibrations—riding a scooter or Bengaluru auto adds 800–1,000 phantom steps before I even reach office, and bottom chin bezel is thicker than the top.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Naveen Kumar",
+        "daysAgo": 16,
+        "helpful": 53,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "accuracy",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.82
+          }
+        ],
+        "signals": [
+          "Classic budget smartwatch auto-rickshaw phantom step observation"
+        ]
+      },
+      {
+        "title": "Heavy Bluetooth calling drains battery in 2 days & NoiseFit unpairs in background",
+        "text": "Claimed 10-day backup drops to barely 48 hours if Bluetooth calling audio stays active, and iOS kills the NoiseFit app unless you reopen it manually every morning.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Simran Kaur",
+        "daysAgo": 23,
+        "helpful": 30,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Quantifies 48h BT-calling drain vs 10-day claim"
+        ]
+      },
+      {
+        "title": "5 stars given by mistake — proprietary magnetic pogo cable lost connection",
+        "text": "Accidentally clicked 5 stars. Magnetic charging pins stopped latching after 3 weeks unless held down with a rubber band.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Tushar M",
+        "daysAgo": 12,
+        "helpful": 13,
+        "sentiment": "negative",
+        "confidence": 0.93,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts broken magnetic charger complaint"
+        ]
+      },
+      {
+        "title": "AWESOME WATCH RS 100 CASHBACK CARD INSIDE FIVE STARS MUST BUY!!!",
+        "text": "SUPERB PRODUCT BEST SMARTWATCH EVER GIVE 5 STARS SCREENSHOT ON WHATSAPP FOR WARRANTY BONUS MUST BUY VALUE FOR MONEY!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.96,
+        "aspects": [],
+        "signals": [
+          "Incentivized WhatsApp 5-star cashback card mention",
+          "All-caps hype"
+        ]
+      }
+    ],
+    "B0BJLDVX2S": [
+      {
+        "title": "Landscape front camera + A14 Bionic makes this the ultimate UPSC/NEET study tablet",
+        "text": "Finally Apple moved the 12MP Center Stage camera to the long landscape edge so Zoom classes look natural. Reading 600-page NCERT PDFs, split-screen YouTube lectures, and GoodNotes 6 run at 60fps with 10+ hours of screen time.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Ishita Sengupta",
+        "daysAgo": 5,
+        "helpful": 84,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "camera",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Landscape Center Stage camera, NCERT/GoodNotes 6 student workflow"
+        ]
+      },
+      {
+        "title": "Snappy tablet with USB-C, though non-laminated screen sounds hollow with stylus",
+        "text": "USB-C port lets me plug in a SanDisk pendrive directly to watch downloaded lectures. Only caveat for artists: the screen is non-laminated so there is a tiny air gap and audible plastic tap when writing with Apple Pencil USB-C.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Rohan Vaidya",
+        "daysAgo": 12,
+        "helpful": 51,
+        "sentiment": "positive",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "display",
+            "sentiment": "neutral",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Accurately identifies non-laminated display air gap & stylus tap"
+        ]
+      },
+      {
+        "title": "64GB storage leaves barely 44GB usable after iPadOS 18",
+        "text": "Hardware build and stereo landscape speakers are great, but iPadOS + System Data eat ~20GB immediately. You cannot install Genshin Impact and store offline Netflix movies simultaneously without constant cleanup.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Aarav Kapoor",
+        "daysAgo": 19,
+        "helpful": 39,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "storage",
+            "sentiment": "negative",
+            "confidence": 0.96
+          },
+          {
+            "name": "speakers",
+            "sentiment": "positive",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Quantifies ~44GB usable storage after iPadOS"
+        ]
+      },
+      {
+        "title": "Apple Pencil 1st Gen dongle mess & no magnetic wireless stylus charging",
+        "text": "If you want pressure sensitivity you have to use 1st-Gen Lightning Pencil with a clunky USB-C adapter cable; the newer USB-C Pencil attaches magnetically for storage ONLY and lacks pressure sensitivity.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Chitra ArtStudio",
+        "daysAgo": 28,
+        "helpful": 45,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "value",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Detailed 1st-Gen adapter vs USB-C Pencil pressure sensitivity trade-off"
+        ]
+      },
+      {
+        "title": "Clicked 2 stars accidentally — battery lasts 3 days of casual reading!",
+        "text": "Meant 5 stars! Touch ID on the top power button works fast and the Blue aluminum finish looks gorgeous in person.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Madhuri Kulkarni",
+        "daysAgo": 14,
+        "helpful": 11,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "2★ rating contradicts positive battery/build review"
+        ]
+      },
+      {
+        "title": "BEST IPAD EVER SUPERB QUALITY 100% GENUINE MUST BUY!!!!",
+        "text": "AWESOME APPLE TABLET FIVE STARS VALUE FOR MONEY DONT MISS JUST BUY IT BEST DEAL EVER!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "Generic all-caps hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CHZ2GYY5": [
+      {
+        "title": "Bundled Wacom EMR S Pen + Samsung Notes beats buying a ₹10k stylus extra",
+        "text": "Having the soft-tip S Pen right in the box—never needing battery charging for handwriting—makes this unbeatable for medical school notes. IP68 water resistance survived a coffee spill on my study desk, and microSD slot took my 512GB card.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Dr_Aishwarya_P",
+        "daysAgo": 4,
+        "helpful": 92,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "storage",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Battery-free EMR S Pen, IP68 spill survival, and microSD detail"
+        ]
+      },
+      {
+        "title": "Crisp 90Hz screen and AKG speakers, but Exynos 1380 is strictly mid-range",
+        "text": "Samsung DeX desktop mode with a Bluetooth keyboard handles 10 Chrome tabs, PDFs, and Netflix smoothly. Just don't buy this for heavy 3D gaming—BGMI caps out lower and stutters compared to Snapdragon 870 tablets.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Shashank Tripathi",
+        "daysAgo": 11,
+        "helpful": 56,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.9
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Fair comparison of Exynos 1380 DeX productivity vs Snapdragon 870 gaming"
+        ]
+      },
+      {
+        "title": "No charger in box and USB-C port is USB 2.0 (no HDMI video out)",
+        "text": "Unlike flagship Tab S9, the USB-C port on S9 FE does NOT support wired DisplayPort/HDMI monitor output for DeX, and charging the 8000mAh battery with an old 15W brick takes nearly 3 hours.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Kौशिक_R",
+        "daysAgo": 18,
+        "helpful": 41,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Exact USB 2.0 no-DisplayPort hardware limitation noted"
+        ]
+      },
+      {
+        "title": "Soft S Pen nib wears down in 6 weeks if you apply matte paper screen film",
+        "text": "Installed a matte paper-like screen protector and it chewed through the soft rubberized S Pen tip in a month—Samsung doesn't include spare nibs inside the retail box anymore.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Ritwik_Draws",
+        "daysAgo": 27,
+        "helpful": 29,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Specific matte screen film vs rubberized S Pen nib wear detail"
+        ]
+      },
+      {
+        "title": "5 stars tapped accidentally — LCD backlight bleed along bottom bezel",
+        "text": "Meant 2 stars. Watching dark movies in bed shows uneven white LCD glow along the bottom edge since this FE model uses IPS LCD instead of AMOLED.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Anjali Nair",
+        "daysAgo": 15,
+        "helpful": 16,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts IPS LCD backlight bleed complaint"
+        ]
+      },
+      {
+        "title": "Nice tablet good product best samsung tab must buy five stars!",
+        "text": "Very good nice product awesome tab value for money superb quality go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CC8QGXHL": [
+      {
+        "title": "144Hz 2.8K Dolby Vision screen + quad speakers = mini home theatre at ₹25k",
+        "text": "Snapdragon 870 + 8GB LPDDR5 + UFS 3.1 flies through Genshin, 4K60 YouTube, and Lightroom without breaking a sweat. 33W charger IS included in the Indian retail box, and USB 3.2 Gen 1 outputs 4K60 straight to my TV via USB-C hub.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Harshil Mehta",
+        "daysAgo": 5,
+        "helpful": 98,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "speakers",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Cites UFS 3.1, bundled 33W brick, and USB 3.2 4K60 video output"
+        ]
+      },
+      {
+        "title": "Sleek 490g aluminum unibody, though camera bump makes it wobble on desks",
+        "text": "Build feels every bit as premium as an iPad Air and 8840mAh battery lasts two full days of lectures. Note that the square rear camera island sticks out, so buy a folio case immediately if you plan to write flat on a table.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Tanvi Kulkarni",
+        "daysAgo": 10,
+        "helpful": 49,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Mentions 490g weight and flat-desk camera bump wobble"
+        ]
+      },
+      {
+        "title": "Xiaomi Smart Pen 2nd Gen is ₹6,000 extra and frequently out of stock",
+        "text": "Great media tablet, but generic ₹1,500 capacitive pens have zero palm rejection on Pad 6—only the official ₹5,999 Xiaomi Smart Pen 2 works properly, bringing total cost close to Tab S9 FE.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Saurav_Notes",
+        "daysAgo": 17,
+        "helpful": 44,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "value",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          },
+          {
+            "name": "accessories",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Real Indian accessory availability & palm-rejection insight"
+        ]
+      },
+      {
+        "title": "No fingerprint sensor, no GPS chip, and limited major Android OS updates",
+        "text": "Face unlock fails in dim bedrooms so I end up typing my PIN constantly, there is no 3.5mm jack or microSD slot, and Xiaomi's Android version support stops much earlier than Samsung.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Pradeep_V",
+        "daysAgo": 25,
+        "helpful": 27,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "sensors",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Lists missing fingerprint scanner, GPS, microSD, and OS update cycle"
+        ]
+      },
+      {
+        "title": "Clicked 1 star mistakenly — best ₹25,000 tech purchase of the year!",
+        "text": "Sorry, tapped 1 star on phone! Quad Dolby Atmos speakers are louder than my laptop and 144Hz comic reading is silky smooth.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Nikhil Joshi",
+        "daysAgo": 13,
+        "helpful": 14,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "speakers",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts enthusiastic 5/5 praise"
+        ]
+      },
+      {
+        "title": "AWESOME PAD 6 BEST TABLET IN INDIA MUST BUY FIVE STARS!!!",
+        "text": "SUPERB PRODUCT BEST EVER VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE FIVE STARS!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B097RJ867P": [
+      {
+        "title": "Crisps paneer tikka, samosas & fries evenly with 1 tsp oil — 6A normal plug!",
+        "text": "Best part for Indian apartments: 1400W runs on a standard 6A kitchen plug without needing a heavy 16A geyser socket. Starfish bottom swirls hot air evenly so 180C for 13 minutes crisps frozen snacks without flipping halfway.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Rekha Iyer",
+        "daysAgo": 3,
+        "helpful": 118,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Crucial Indian 6A vs 16A plug detail + 180C/13m cooking benchmark"
+        ]
+      },
+      {
+        "title": "Ideal 4.1L size for a family of 3, use silicone liner to protect coating",
+        "text": "Keep Warm button is great when dinner gets delayed by 20 minutes, and basket clicks out cleanly for washing. Pro tip: place a perforated parchment or silicone liner inside so masala marinades don't wear the non-stick mesh.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Smita Deshpande",
+        "daysAgo": 10,
+        "helpful": 62,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "ease of cleaning",
+            "sentiment": "positive",
+            "confidence": 0.91
+          },
+          {
+            "name": "durability",
+            "sentiment": "neutral",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "Practical Keep Warm usage and non-stick basket care advice"
+        ]
+      },
+      {
+        "title": "Capacitive touch buttons fail to register wet or oily fingers",
+        "text": "Cooking results are consistent, but the glossy capacitive touch icons often require two or three firm presses if your fingers have even slight moisture while prepping food, and the 0.8m power cord is quite short.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Ramesh_Nair",
+        "daysAgo": 18,
+        "helpful": 47,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "cord length",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Known HD9252 capacitive touch sensitivity & 0.8m cord length"
+        ]
+      },
+      {
+        "title": "Strong plastic smell during first 4 runs & inner pan coating chipped",
+        "text": "First week gave off a hot plastic odor that needed empty lemon-water burn-ins, and after 3 months of gentle sponge washing the grey outer pan started showing tiny non-stick flakes.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Vandana Gupta",
+        "daysAgo": 29,
+        "helpful": 35,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Specific initial plastic odor and 3-month pan flaking report"
+        ]
+      },
+      {
+        "title": "Selected 5 stars by mistake — basket release latch jammed on week 2",
+        "text": "Meant 2 stars! Sliding plastic guard over the basket release button got stuck and sliding the pan back in requires forcing it upward.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Harish K",
+        "daysAgo": 14,
+        "helpful": 17,
+        "sentiment": "negative",
+        "confidence": 0.93,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts jammed basket latch complaint"
+        ]
+      },
+      {
+        "title": "SUPERB AIR FRYER BEST PHILIPS PRODUCT MUST BUY FIVE STARS!!!",
+        "text": "AWESOME PRODUCT BEST EVER FOR KITCHEN VALUE FOR MONEY JUST BUY DONT MISS FIVE STARS 100% GENUINE!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock praise",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0BDG98DJX": [
+      {
+        "title": "Fluffy roller + De-tangling Motorbar pulls unbelievable fine dust off marble & rugs",
+        "text": "Thought our daily jhadu-pocha kept the 3BHK clean until one pass of the Dyson Fluffy head filled half the 0.54L bin with talcum-fine Bengaluru road dust and golden-retriever hair without tangling around the brush bar.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Aparna Krishnan",
+        "daysAgo": 5,
+        "helpful": 88,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "ease of cleaning",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Fluffy roller on marble + De-tangling Motorbar pet-hair specifics"
+        ]
+      },
+      {
+        "title": "Effortless ceiling fan & car cleaning, just avoid leaving it on MAX mode",
+        "text": "On Normal suction mode with motorized head attached, I get ~28 minutes which comfortably cleans a 1400 sq ft flat. Wall dock installation by Dyson India engineer was free and prompt.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Rajat Oberoi",
+        "daysAgo": 12,
+        "helpful": 51,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.87
+          },
+          {
+            "name": "installation",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "28-minute Normal motorized runtime and free Dyson wall-dock install"
+        ]
+      },
+      {
+        "title": "MAX suction mode dies in 7 minutes flat and recharge takes 5 hours!",
+        "text": "Suction on thick Persian carpets needs MAX mode, which drains a full charge in literally 7 minutes—and then you have to wait 5 full hours before the non-swappable battery is full again.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Farhan_Mirza",
+        "daysAgo": 19,
+        "helpful": 64,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.96
+          },
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Exact Dyson V8 7-minute MAX runtime & 5-hour charge specs"
+        ]
+      },
+      {
+        "title": "Holding down trigger continuously cramps index finger & red gasket tears",
+        "text": "There is no power lock toggle—you must squeeze the trigger non-stop while vacuuming sofas, which leaves a callus on your index knuckle, and replacement out-of-warranty batteries cost ₹8,500.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Meenakshi_S",
+        "daysAgo": 27,
+        "helpful": 38,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "price",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Continuous trigger fatigue and ₹8,500 replacement battery cost"
+        ]
+      },
+      {
+        "title": "Tapped 1 star accidentally — HEPA filter completely stopped my dust allergies!",
+        "text": "Oops clicked 1 star! Exhaust air smells cleaner than room air and hygienic pull-latch bin emptying means my hands never touch dust.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Dr_Vivek_R",
+        "daysAgo": 14,
+        "helpful": 15,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "ease of cleaning",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts glowing HEPA allergy relief review"
+        ]
+      },
+      {
+        "title": "Nice vacuum good product best cleaner value for money five stars!",
+        "text": "Superb product awesome dyson best ever must buy go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock praise",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B083EHBQVC": [
+      {
+        "title": "230V Indian unit — cooks rajma, dal tadka & sets thick winter dahi hands-free",
+        "text": "Confirmed 230V 1000W Indian model with BIS plug—no step-down transformer needed! Heavy SS304 tri-ply pot lets me sauté masala directly, pressure-cook unsoaked chana in 35 minutes without whistle babysitting, and Yogurt mode ferments curd reliably in Delhi winters.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Gurpreet Kaur",
+        "daysAgo": 4,
+        "helpful": 105,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Confirms 230V Indian model, SS304 tri-ply sauté, chana & winter curd"
+        ]
+      },
+      {
+        "title": "Life-saver for bachelor meal prep, buy a second silicone ring for desserts",
+        "text": "Delay Start timer means hot khichdi is ready right when I get home from office. One essential tip: the clear lid silicone gasket absorbs tadka/garlic smell permanently, so keep a blue/red spare ring for kheer or idli.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Ankit Agrawal",
+        "daysAgo": 11,
+        "helpful": 59,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "ease of cleaning",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Classic Instant Pot silicone gasket odor tip for Indian cooking"
+        ]
+      },
+      {
+        "title": "Takes 12 minutes just to come up to pressure + 'BURN' notice on thick gravies",
+        "text": "If you don't deglaze every browned onion bit off the steel bottom with water before sealing, thick tomato-cashew gravies trigger the 'BURN' error code, and pre-pressurizing adds 10–12 mins to recipe times.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Nalini_Cooks",
+        "daysAgo": 19,
+        "helpful": 44,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.87
+          },
+          {
+            "name": "ease of setup",
+            "sentiment": "negative",
+            "confidence": 0.86
+          }
+        ],
+        "signals": [
+          "Authentic Instant Pot 'BURN' notice deglazing & preheat timing detail"
+        ]
+      },
+      {
+        "title": "Bulky 5.7L footprint hogs small modular kitchen counter & spare parts scarce",
+        "text": "Tall lid needs cabinet clearance when venting steam, and finding genuine Instant Brands float-valve gaskets or spare inner pots in India after warranty is frustrating.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Sudhir_M",
+        "daysAgo": 28,
+        "helpful": 26,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "portability",
+            "sentiment": "negative",
+            "confidence": 0.87
+          },
+          {
+            "name": "accessories",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Modular kitchen steam clearance and India spare-parts availability"
+        ]
+      },
+      {
+        "title": "5 stars clicked wrongly — steam release knob feels loose out of the box",
+        "text": "Selected 5 stars by mistake; wobbly steam-venting valve confused me at first and outer brushed steel housing dented slightly during courier transit.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Poonam Verma",
+        "daysAgo": 15,
+        "helpful": 13,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "packaging",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches transit dent complaint"
+        ]
+      },
+      {
+        "title": "AWESOME COOKER BEST EVER MUST BUY FIVE STARS 100% GENUINE!!!",
+        "text": "SUPERB PRODUCT BEST COOKER VALUE FOR MONEY JUST BUY IT DONT MISS FIVE STARS HIGHLY RECOMMEND!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0B11LJ69K": [
+      {
+        "title": "Quiet Clicks + MagSpeed wheel + horizontal thumb scroll cured my wrist pain",
+        "text": "Using 9 hours a day across Davinci Resolve timelines and 50-column financial models. Flicking the machined steel MagSpeed wheel through 2,000 rows in silence feels sublime, and Logi Bolt USB receiver inside box keeps cursor rock-solid.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Shreyas Kulkarni",
+        "daysAgo": 4,
+        "helpful": 94,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "MagSpeed wheel, Quiet Clicks, Davinci Resolve thumb wheel, Logi Bolt"
+        ]
+      },
+      {
+        "title": "Productivity king on Mac & Windows, useless for fast FPS gaming (125Hz)",
+        "text": "Tracks directly on my clear glass dining table thanks to the 8K DPI sensor, and a 1-minute USB-C top-up lasts all afternoon. Note that Bluetooth/Bolt polling rate caps at 125Hz and 141g weight is heavy for Valorant.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Arjun_Dev",
+        "daysAgo": 11,
+        "helpful": 57,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "accuracy",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "charging",
+            "sentiment": "positive",
+            "confidence": 0.9
+          },
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "8K glass tracking vs exact 125Hz polling rate & 141g weight"
+        ]
+      },
+      {
+        "title": "Device-switch button is underneath the mouse & Logi Options+ hogs RAM",
+        "text": "Having to flip the mouse upside down to press the 1-2-3 channel button is awkward if you don't use Flow, and Logi Options+ background daemon eats ~350MB RAM on macOS.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Kiran_N",
+        "daysAgo": 18,
+        "helpful": 36,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "neutral",
+            "confidence": 0.85
+          },
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Bottom channel button and 350MB Logi Options+ RAM observation"
+        ]
+      },
+      {
+        "title": "Soft rubber TPU shell gets sticky and shiny in humid Indian weather",
+        "text": "After 7 months in Chennai humidity without gripping stickers, the matte rubberized thumb rest started peeling/turning tacky—unacceptable on a ₹9,000 mouse.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Balaji Venkat",
+        "daysAgo": 29,
+        "helpful": 48,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.96
+          },
+          {
+            "name": "price",
+            "sentiment": "negative",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Well-known MX Master 3S TPU rubber degradation in humid climate"
+        ]
+      },
+      {
+        "title": "Clicked 1 star mistakenly — Graphite avoids Pale Gray yellowing completely!",
+        "text": "Meant 5 stars! Glad I chose Graphite instead of Pale Gray—still looks clean after daily coffee-shop coworking and battery lasts 60+ days.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Rhea Kapoor",
+        "daysAgo": 13,
+        "helpful": 15,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.91
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts positive Graphite & 60-day battery review"
+        ]
+      },
+      {
+        "title": "BEST MOUSE EVER SUPERB LOGITECH MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME PRODUCT BEST MOUSE IN WORLD VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0BT4DP7SC": [
+      {
+        "title": "F1–F3 Easy-Switch across work ThinkPad, iPad & phone in under 1 second",
+        "text": "Slips right next to my iPad inside a 13-inch sleeve (only 415g with batteries). Quiet scooped keys don't annoy library neighbors, and the updated K380s adds emoji/screenshot Fn shortcuts plus Logi Bolt support.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Mitali Chatterjee",
+        "daysAgo": 5,
+        "helpful": 66,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "portability",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "keyboard",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "415g weight, K380s vs K380 Fn/Bolt upgrades, library noise test"
+        ]
+      },
+      {
+        "title": "3-year AAA battery peace of mind, circular keys take 3 days to adjust",
+        "text": "At first my fingers clipped adjacent keys because the round keycaps are slightly cramped compared to a 15-inch laptop, but by day four I was back at 85 WPM. Love not having another USB cable to charge.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Suhas_K",
+        "daysAgo": 12,
+        "helpful": 39,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "keyboard",
+            "sentiment": "neutral",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Realistic 3-day typing curve to 85 WPM on circular keycaps"
+        ]
+      },
+      {
+        "title": "No key backlighting and Logi Bolt USB dongle is NOT included in box",
+        "text": "Typing in a dim room at night is guesswork because there is zero backlight on the dark Tonal Graphite legends, and while it is 'Logi Bolt ready', you must buy the ₹1,200 receiver separately.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Abhinav_R",
+        "daysAgo": 19,
+        "helpful": 34,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "keyboard",
+            "sentiment": "negative",
+            "confidence": 0.89
+          },
+          {
+            "name": "accessories",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Clarifies no backlight and unbundled Logi Bolt dongle"
+        ]
+      },
+      {
+        "title": "Fixed flat tilt angle & cramped up/down arrow keys frustrate coders",
+        "text": "No flip-out feet to adjust typing angle, half-height up/down arrow keys slow down code navigation in VS Code, and Caps Lock lacks an LED status light on the key itself.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "dev_nikhil",
+        "daysAgo": 26,
+        "helpful": 25,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "keyboard",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Half-height arrow keys, missing tilt feet, and no Caps Lock LED"
+        ]
+      },
+      {
+        "title": "5 stars tapped accidentally — spacebar started squeaking after 3 weeks",
+        "text": "Meant 2 stars. Left stabilizer on the spacebar developed a plastic squeak whenever pressed off-center.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Preeti S",
+        "daysAgo": 14,
+        "helpful": 11,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts squeaky spacebar stabilizer complaint"
+        ]
+      },
+      {
+        "title": "Nice keyboard good product best bluetooth keyboard five stars!",
+        "text": "Very good nice product awesome keyboard value for money must buy go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock praise",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0DPQWPQN2": [
+      {
+        "title": "Steal at ₹10,999 — zero dead pixels, true 180Hz over HDMI & DisplayPort cable in box",
+        "text": "Upgraded from a 60Hz office screen for Valorant and CS2. Motion clarity at 180Hz Fast IPS with Adaptive-Sync enabled is night-and-day, LG bundles a DisplayPort cable inside the box, and the bottom OSD joystick is super intuitive.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Ayushman Roy",
+        "daysAgo": 4,
+        "helpful": 81,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "accessories",
+            "sentiment": "positive",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "180Hz Fast IPS motion, bundled DP cable, and bottom OSD joystick"
+        ]
+      },
+      {
+        "title": "Great colors once switched to Gamer 1 + Gamma Mode 2, basic tilt-only stand",
+        "text": "Out-of-the-box Eco mode looks slightly warm, but switching to Gamer 1 (99% sRGB) makes both Figma UI work and gaming pop. Stand only tilts (-5° to +15°)—mounted mine on a ₹1,400 100x100mm VESA arm.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Pratiksha Kulkarni",
+        "daysAgo": 10,
+        "helpful": 47,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Specific Gamer 1 + Gamma 2 calibration and 100x100mm VESA mount note"
+        ]
+      },
+      {
+        "title": "HDR10 is marketing only (300 nits, no local dimming) & no built-in speakers",
+        "text": "Keep Windows HDR turned OFF—without local dimming zones 300-nit HDR washes out desktop blacks. Note there are no internal speakers, only a 3.5mm headphone pass-through jack.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Varun_PC",
+        "daysAgo": 17,
+        "helpful": 38,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "neutral",
+            "confidence": 0.86
+          },
+          {
+            "name": "speakers",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Accurate 300-nit HDR10 limitation and 3.5mm audio-out clarification"
+        ]
+      },
+      {
+        "title": "Noticeable IPS glow in bottom-left corner & Faster response setting causes overshoot",
+        "text": "Setting Response Time to 'Faster' introduces visible inverse ghosting halos; keep it on 'Fast'. My panel also has amber IPS glow in the bottom-left corner during dark horror games.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Kshitij_G",
+        "daysAgo": 25,
+        "helpful": 29,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Pinpoints 'Faster' overdrive inverse ghosting and bottom-left IPS glow"
+        ]
+      },
+      {
+        "title": "Clicked 2 stars by mistake — external DC brick keeps panel super cool!",
+        "text": "Tapped 2 stars accidentally, meant 5! Even after 6-hour weekend gaming marathons the bezel stays cool to touch and G-SYNC Compatible never flickers on my RTX 4060.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Rohan Das",
+        "daysAgo": 12,
+        "helpful": 14,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "thermals",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "2★ rating contradicts glowing RTX 4060 G-SYNC review"
+        ]
+      },
+      {
+        "title": "AWESOME LG MONITOR BEST GAMING SCREEN MUST BUY FIVE STARS!!!",
+        "text": "SUPERB MONITOR BEST EVER IN BUDGET VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE FIVE STARS!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B09VLK9W3S": [
+      {
+        "title": "Sustains ~940 MB/s write on 80GB 4K wedding footage without SLC cache cliff",
+        "text": "Unlike standard T7 which throttled on huge continuous copies, T7 Shield held ~940 MB/s end-to-end transferring an 82GB Sony S-Log3 folder from MacBook Pro, and includes BOTH USB-C-to-C and USB-C-to-A cables inside box.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Vikram_Films",
+        "daysAgo": 5,
+        "helpful": 76,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "transfer speed",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "thermals",
+            "sentiment": "positive",
+            "confidence": 0.93
+          },
+          {
+            "name": "accessories",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "82GB continuous write cache test + bundled C-to-C and C-to-A cables"
+        ]
+      },
+      {
+        "title": "Survives rough camera-bag travel, though rubber jacket is a lint magnet",
+        "text": "Dropped once onto concrete studio floor from waist height—zero hiccups. Only quirk: the grippy elastomer shell picks up every speck of backpack lint and pet fur instantly.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Neha_Photo",
+        "daysAgo": 11,
+        "helpful": 42,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "build quality",
+            "sentiment": "neutral",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "Drop test durability vs elastomer lint magnet trade-off"
+        ]
+      },
+      {
+        "title": "Recessed USB-C port rejects thick braided third-party Thunderbolt cables",
+        "text": "Because of the thick waterproof rubber lip around the USB-C port, chunky aluminum-housing cables don't click all the way in and disconnect randomly unless you use Samsung's slim bundled cable.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Arjun_Edit",
+        "daysAgo": 18,
+        "helpful": 39,
+        "sentiment": "neutral",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Known T7 Shield recessed USB-C bumper cable fit issue"
+        ]
+      },
+      {
+        "title": "Samsung Magician software failed to detect drive on macOS Sequoia without kext tweaks",
+        "text": "Formatted exFAT fine via Disk Utility, but enabling AES-256 hardware password unlock via Samsung Magician on Apple Silicon required digging through security kernel extension prompts and rebooting twice.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "dev_sanjay",
+        "daysAgo": 26,
+        "helpful": 24,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "macOS Apple Silicon kernel extension / Samsung Magician friction"
+        ]
+      },
+      {
+        "title": "Selected 5 stars in error — shipped formatted NTFS/exFAT confusion & short 45cm cable",
+        "text": "Meant 3 stars; bundled cables are barely 45cm long so the SSD dangles awkwardly in mid-air if plugged into the top IO panel of a desktop tower.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Mohit_R",
+        "daysAgo": 14,
+        "helpful": 11,
+        "sentiment": "negative",
+        "confidence": 0.88,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "cord length",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches short dangling desktop cable complaint"
+        ]
+      },
+      {
+        "title": "Nice ssd good product super fast best ssd five stars must buy!",
+        "text": "Very good nice product awesome speed value for money go for it five stars superb!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.89,
+        "aspects": [
+          {
+            "name": "transfer speed",
+            "sentiment": "positive",
+            "confidence": 0.62
+          }
+        ],
+        "signals": [
+          "Generic stock phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0DNFSSF3F": [
+      {
+        "title": "Lifesaver at ₹1,099 for moving 30GB phone videos straight to laptop without cloud",
+        "text": "Plugged straight into my OnePlus USB-C port, moved 28GB of family wedding videos via Files app, flipped the swivel to USB-A, and copied onto my parents' Windows PC in minutes. Tiny keyring hole keeps it on my house keys.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Srinivas Rao",
+        "daysAgo": 3,
+        "helpful": 87,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "portability",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Dual USB-C/USB-A phone-to-PC offload workflow"
+        ]
+      },
+      {
+        "title": "Fast ~180 MB/s read speeds, just remove thick phone bumper cases first",
+        "text": "Read speeds hit 180–220 MB/s on USB 3.2 ports. Note that the USB-C plug stem is short, so thick Spigen armor cases block full insertion unless you pop one bottom corner of the phone cover off.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Priyanka Nair",
+        "daysAgo": 9,
+        "helpful": 49,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "transfer speed",
+            "sentiment": "positive",
+            "confidence": 0.9
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "180-220 MB/s read benchmark + thick phone case clearance tip"
+        ]
+      },
+      {
+        "title": "Gets noticeably hot to touch and sustained write drops to ~25 MB/s",
+        "text": "Burst write starts at 80 MB/s for the first 3GB, then drops to 22–28 MB/s on large ISO files while the small plastic shell gets very warm between your fingers.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "hemant_tech",
+        "daysAgo": 16,
+        "helpful": 55,
+        "sentiment": "neutral",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "transfer speed",
+            "sentiment": "negative",
+            "confidence": 0.92
+          },
+          {
+            "name": "thermals",
+            "sentiment": "negative",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Exact 3GB cache cliff to 22-28 MB/s and SanDisk pendrive heat"
+        ]
+      },
+      {
+        "title": "Plastic swivel loosens in pocket leaving bare USB-C tip exposed to lint",
+        "text": "Unlike the metal Luxe edition, this plastic swivel detents wear out after a month on a keychain, exposing the delicate Type-C connector inside jeans pockets.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Karan_J",
+        "daysAgo": 24,
+        "helpful": 27,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Compares plastic swivel wear against Luxe metal variant"
+        ]
+      },
+      {
+        "title": "Clicked 1 star accidentally — works plug-and-play on iPhone 15 & iPad too!",
+        "text": "Oops hit 1 star! Formatted as exFAT out of the box so Apple Files app recognized all 115GB usable space immediately.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Tanya Sharma",
+        "daysAgo": 11,
+        "helpful": 14,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts glowing exFAT iPhone 15 compatibility review"
+        ]
+      },
+      {
+        "title": "SUPERB PENDRIVE BEST SANDISK 128GB MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME PRODUCT BEST PENDRIVE EVER VALUE FOR MONEY JUST BUY DONT MISS FIVE STARS 100% ORIGINAL!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B09VSYKNJS": [
+      {
+        "title": "Delivers full 300 Mbps ACT Fibernet speed over Wi-Fi 6 with zero drops",
+        "text": "Replaced my ISP's weak dual-band router in 5 minutes using PPPoE login on the TP-Link Tether app. With 18 smart bulbs, 2 TVs, and 3 laptops connected, triple-core CPU keeps ping rock-steady at 4ms on Valorant.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Vignesh Balasubramanian",
+        "daysAgo": 5,
+        "helpful": 74,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "stability",
+            "sentiment": "positive",
+            "confidence": 0.97
+          },
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "300 Mbps ACT Fibernet PPPoE, 18 IoT devices, and 4ms ping"
+        ]
+      },
+      {
+        "title": "Four real Gigabit LAN ports + OneMesh support at ₹3,499",
+        "text": "Hardwired my PS5 and desktop PC to the Gigabit LAN ports while laptops use 5GHz AX. Scheduled nightly 4 AM auto-reboot in settings and haven't touched the router in 2 months.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Saurabh_N",
+        "daysAgo": 12,
+        "helpful": 43,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Gigabit LAN ports + scheduled reboot firmware feature"
+        ]
+      },
+      {
+        "title": "2.4GHz is still Wi-Fi 4 (802.11n) & struggles past two thick RCC brick walls",
+        "text": "Note that AX1500 only upgrades the 5GHz band to Wi-Fi 6—the 2.4GHz band is legacy 300 Mbps Wi-Fi 4, and in our L-shaped 1650 sq ft RCC concrete flat the corner bedroom drops to 1 bar without a mesh extender.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "nitin_net",
+        "daysAgo": 19,
+        "helpful": 51,
+        "sentiment": "neutral",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          },
+          {
+            "name": "stability",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Accurate AX10 spec detail (2.4GHz is 802.11n) + RCC concrete range"
+        ]
+      },
+      {
+        "title": "No USB port for network drive & HomeCare parental features stripped vs AX20",
+        "text": "Glossy black X-pattern on top scratches while dusting, there is no USB port to share a printer/SSD, and advanced QoS device-priority controls are barebones.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Deepak_IT",
+        "daysAgo": 27,
+        "helpful": 22,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "Compares AX10 missing USB/HomeCare against AX20"
+        ]
+      },
+      {
+        "title": "Selected 5 stars mistakenly — power adapter whines faintly at night",
+        "text": "Accidentally left 5 stars; the 12V wall adapter makes a faint high-pitched coil whine in a silent bedroom if plugged right next to the bed.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Ananya_B",
+        "daysAgo": 14,
+        "helpful": 12,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "negative",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts 12V adapter coil-whine complaint"
+        ]
+      },
+      {
+        "title": "Nice router good product super wifi speed five stars must buy!",
+        "text": "Very good nice router best wifi 6 product value for money go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock praise",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B09F9QMR1T": [
+      {
+        "title": "APS-C background blur + Product Showcase mode transformed our YouTube studio",
+        "text": "Holding up gadgets in front of my face switches focus instantaneously without waving my hand behind the object. Pairing this body with a Sigma 16mm f/1.4 gives true DSLR bokeh, and USB-C single-cable 4K webcam streaming works driver-free.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "TechWithRohan",
+        "daysAgo": 5,
+        "helpful": 83,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "autofocus",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "video quality",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Product Showcase mode, Sigma 16mm E-mount pairing, USB streaming"
+        ]
+      },
+      {
+        "title": "Directional 3-capsule mic + deadcat wind screen is great; buy a spare NP-FW50 battery",
+        "text": "Oversampled 6K-to-4K24p sharpness is miles ahead of any iPhone. Just note that continuous 4K recording eats one NP-FW50 battery in ~65 minutes, so keep a USB power bank or spare cell handy.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Kavya_Vlogs",
+        "daysAgo": 11,
+        "helpful": 48,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "audio",
+            "sentiment": "positive",
+            "confidence": 0.91
+          },
+          {
+            "name": "video quality",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "6K-oversampled 4K24p and 65-min NP-FW50 battery runtime"
+        ]
+      },
+      {
+        "title": "Heavy 1.44x crop on Active SteadyShot & noticeable rolling shutter jello",
+        "text": "Without in-body IBIS, walking handheld requires Active SteadyShot which crops the 16mm kit lens tight onto your nose, and fast whip-pans show Sony APS-C rolling shutter skew.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Siddharth_DP",
+        "daysAgo": 18,
+        "helpful": 52,
+        "sentiment": "neutral",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "stabilization",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "video quality",
+            "sentiment": "neutral",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Known ZV-E10 Active SteadyShot crop and rolling shutter jello"
+        ]
+      },
+      {
+        "title": "No electronic viewfinder (EVF) makes framing in harsh midday sun tough",
+        "text": "Touchscreen only lets you tap-to-focus—you STILL cannot navigate Sony's old tab menus by touch! Outdoors at Jaipur forts in noon glare, the 921k-dot LCD washes out with no EVF fallback.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Traveler_Amit",
+        "daysAgo": 27,
+        "helpful": 33,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "display",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Touch-to-focus-only old menu limitation and missing EVF outdoors"
+        ]
+      },
+      {
+        "title": "Clicked 1 star accidentally — 343g body balances on tiny crane gimbals easily!",
+        "text": "Sorry, tapped 1 star! Upgraded from smartphone vlogging and client product reels immediately looked twice as professional.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "PoojaCreates",
+        "daysAgo": 13,
+        "helpful": 14,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "portability",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "video quality",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts glowing creator review"
+        ]
+      },
+      {
+        "title": "AWESOME SONY CAMERA BEST VLOG CAMERA MUST BUY FIVE STARS!!!!",
+        "text": "SUPERB CAMERA BEST QUALITY EVER VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE FIVE STARS!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CGRKKR6X": [
+      {
+        "title": "HyperSmooth 6.0 Horizon Lock survived Leh-Manali off-road patches + 1/4-20 thread!",
+        "text": "Mounted on my Himalayan 450 helmet from Manali to Khardung La—Enduro battery didn't die once in 4°C morning cold, 360° Horizon Lock kept rocky trail footage gimbal-level, and the new standard 1/4-20 tripod thread on bottom is overdue perfection.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Rider_Vikram",
+        "daysAgo": 4,
+        "helpful": 79,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "stabilization",
+            "sentiment": "positive",
+            "confidence": 0.99
+          },
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "build quality",
+            "sentiment": "positive",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "Khardung La 4C Enduro test, Horizon Lock, and new 1/4-20 bottom thread"
+        ]
+      },
+      {
+        "title": "8:7 open-gate sensor crops vertically & horizontally, Bluetooth mic works for notes",
+        "text": "Shooting once in 8:7 5.3K lets me export both 16:9 YouTube and 9:16 Instagram Reels without losing resolution, and pairing AirPods via Bluetooth lets me trigger voice commands on windy rides.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Karan_Moto",
+        "daysAgo": 11,
+        "helpful": 44,
+        "sentiment": "positive",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "video quality",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "8:7 open-gate YouTube/Reels workflow and Hero12 Bluetooth audio"
+        ]
+      },
+      {
+        "title": "GoPro removed the built-in GPS chip — no speed/track telemetry stickers!",
+        "text": "Shocked to discover after unboxing that Hero 12 stripped out the GPS module that Hero 11 had, so track-day riders can no longer overlay speedometers or route maps in Quik.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "TrackDay_Adi",
+        "daysAgo": 18,
+        "helpful": 58,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "sensors",
+            "sentiment": "negative",
+            "confidence": 0.97
+          }
+        ],
+        "signals": [
+          "Exact Hero 12 vs Hero 11 GPS removal complaint"
+        ]
+      },
+      {
+        "title": "Noisy in evening/indoor lighting & shuts down from heat stationary at 5.3K60",
+        "text": "Without airflow (like sitting on a café table indoor), 5.3K60 HDR shuts down with a thermal warning at ~24 minutes, and once the sun sets HyperSmooth smears lights into jittery ghosts.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Nikhil_Travel",
+        "daysAgo": 26,
+        "helpful": 36,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "thermals",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "video quality",
+            "sentiment": "negative",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "24-min stationary 5.3K60 thermal shutdown and low-light stabilization ghosting"
+        ]
+      },
+      {
+        "title": "5 stars clicked in error — Quik Android app demands subscription for cloud tools",
+        "text": "Selected 5 stars mistakenly. Transferring 10GB 5.3K clips over Wi-Fi to the Quik app takes forever and aggressive subscription upsells pop up constantly.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Rohan_B",
+        "daysAgo": 14,
+        "helpful": 13,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "5★ rating contradicts Quik app Wi-Fi & subscription complaint"
+        ]
+      },
+      {
+        "title": "Nice action camera good product best gopro five stars must buy!",
+        "text": "Superb product awesome video quality value for money go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [],
+        "signals": [
+          "Generic stock phrases",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0BX8W9SPW": [
+      {
+        "title": "Twist-barrel power + parallax correction fixes off-center close-up selfies!",
+        "text": "Gifted Pastel Blue for my sister's birthday party—guests couldn't put it down! Twisting the lens ring to Close-Up mode shifts the optical viewfinder inward so 30cm food/selfie shots actually frame dead-center unlike the old Mini 11.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Sanya Arora",
+        "daysAgo": 4,
+        "helpful": 69,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "accuracy",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "Mini 12 twist-ring Close-Up optical parallax fix vs Mini 11"
+        ]
+      },
+      {
+        "title": "Charming nostalgic prints in 90 seconds, factor in ~₹45 per photo film cost",
+        "text": "Colors develop with that warm analog Fuji look that phone filters never quite replicate, and 2 Duracell AA batteries lasted through 8 film packs. Just remember twin-packs (20 sheets) cost ₹850–₹950.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Devanshi Patel",
+        "daysAgo": 11,
+        "helpful": 45,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "battery",
+            "sentiment": "positive",
+            "confidence": 0.9
+          },
+          {
+            "name": "price",
+            "sentiment": "neutral",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Exact ₹850-950 twin-pack (~₹45/shot) ongoing film cost"
+        ]
+      },
+      {
+        "title": "Flash fires on EVERY shot (cannot be disabled) & harsh noon sun blows out skies",
+        "text": "Indoors and at golden hour exposures are lovely, but you cannot turn off the flash in museum/mirror rooms and shooting under bright Goa midday sun turns white shirts pure white.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Kabir_Clicks",
+        "daysAgo": 19,
+        "helpful": 37,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "camera",
+            "sentiment": "negative",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "Always-on flash and midday overexposure behavior"
+        ]
+      },
+      {
+        "title": "Zero film included in the ₹7,499 box & chubby matte body needs a pouch",
+        "text": "Opened it at a birthday dinner expecting at least a 10-shot starter pack—box only has camera, wrist strap, and 2 AA cells! Had to wait next day for Blinkit/Amazon film delivery.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Manasi_K",
+        "daysAgo": 25,
+        "helpful": 31,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "accessories",
+            "sentiment": "negative",
+            "confidence": 0.95
+          },
+          {
+            "name": "value",
+            "sentiment": "negative",
+            "confidence": 0.87
+          }
+        ],
+        "signals": [
+          "Unbundled film pack surprise inside retail box"
+        ]
+      },
+      {
+        "title": "Clicked 2 stars by mistake — kids & grandparents loved instant wedding album!",
+        "text": "Oops hit 2 stars! Set this up next to our engagement guestbook and guests stuck 60 instant polaroids with handwritten wishes.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Rohan & Neha",
+        "daysAgo": 13,
+        "helpful": 16,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "ease of setup",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "2★ rating contradicts happy engagement guestbook review"
+        ]
+      },
+      {
+        "title": "BEST INSTAX CAMERA EVER SUPERB CUTE MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME CAMERA BEST GIFT VALUE FOR MONEY JUST BUY IT DONT MISS FIVE STARS 100% GENUINE!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "PromoBoost_India",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0C1HCJVT5": [
+      {
+        "title": "Sony X1 upscaling makes Tata Play HD & JioCinema IPL look sharper than ₹40k brands",
+        "text": "Sony technician arrived 4 hours after Amazon delivery with the free swivel/fixed wall mount! Skin tones look natural without neon oversaturation, 1080i cricket streams upscale cleanly without motion judder, and Apple AirPlay 2 works instantly.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Venkatesh Murthy",
+        "daysAgo": 5,
+        "helpful": 109,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "picture quality",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "installation",
+            "sentiment": "positive",
+            "confidence": 0.96
+          },
+          {
+            "name": "software",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "X1 1080i Tata Play upscaling, prompt Sony wall-mount, AirPlay 2"
+        ]
+      },
+      {
+        "title": "Dependable Google TV and clear dialogue, pair an eARC soundbar for movie bass",
+        "text": "20W Open Baffle speakers keep news and sitcom dialogue super clear even at volume 18, though explosion sub-bass in action movies is polite—hooked my Sony HT-S20R via HDMI ARC and TV remote controls both.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Rajeshwari Menon",
+        "daysAgo": 12,
+        "helpful": 58,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "neutral",
+            "confidence": 0.89
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "positive",
+            "confidence": 0.92
+          }
+        ],
+        "signals": [
+          "Dialogue clarity at vol 18 vs sub-bass HDMI ARC soundbar pairing"
+        ]
+      },
+      {
+        "title": "Thick 7.7cm direct-lit rear chassis & no Dolby Vision (HDR10/HLG only)",
+        "text": "Unlike ultra-slim edge-lit TVs, X74L has a chunky plastic back so it sits ~10cm off the living-room wall, and Netflix plays in standard HDR10 because Dolby Vision starts only on the pricier X80L.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Siddharth_AV",
+        "daysAgo": 19,
+        "helpful": 46,
+        "sentiment": "neutral",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "build quality",
+            "sentiment": "neutral",
+            "confidence": 0.86
+          },
+          {
+            "name": "picture quality",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "Exact X74L vs X80L HDR10-only spec and 7.7cm direct-LED depth"
+        ]
+      },
+      {
+        "title": "Only ~8GB free app storage & 60Hz IPS contrast looks greyish in pitch-dark room",
+        "text": "After installing JioCinema, Hotstar, Prime, SonyLIV, and VLC, Google TV nagged about low storage, and without local dimming black letterbox bars look dark grey with lights off.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Anand_Cinema",
+        "daysAgo": 28,
+        "helpful": 31,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "storage",
+            "sentiment": "negative",
+            "confidence": 0.94
+          },
+          {
+            "name": "picture quality",
+            "sentiment": "negative",
+            "confidence": 0.89
+          }
+        ],
+        "signals": [
+          "~8GB free Google TV app storage & dark-room IPS black levels"
+        ]
+      },
+      {
+        "title": "5 stars tapped accidentally — third HDMI port hard to reach once wall-mounted",
+        "text": "Meant 3 stars; rear-facing ports get blocked against the wall if the technician installs the flat non-swivel bracket instead of a movable arm.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Kishore_P",
+        "daysAgo": 15,
+        "helpful": 14,
+        "sentiment": "negative",
+        "confidence": 0.89,
+        "geminiRisk": 0.14,
+        "aspects": [
+          {
+            "name": "ergonomics",
+            "sentiment": "negative",
+            "confidence": 0.91
+          },
+          {
+            "name": "installation",
+            "sentiment": "negative",
+            "confidence": 0.85
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches wall-mount port access complaint"
+        ]
+      },
+      {
+        "title": "AWESOME SONY BRAVIA BEST 55 INCH TV MUST BUY FIVE STARS!!!!",
+        "text": "SUPERB PICTURE QUALITY BEST TV IN INDIA VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "FiveStar_Express",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [
+          {
+            "name": "picture quality",
+            "sentiment": "positive",
+            "confidence": 0.61
+          }
+        ],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0C82ZHYQ8": [
+      {
+        "title": "Crisp 4K Filmmaker Mode + wide bedroom viewing angles under ₹30,000",
+        "text": "Installed in parents' bedroom. Filmmaker Mode disables artificial motion smoothing with one click, webOS 23 boots quickly into Hotstar and YouTube, and LG technician brought a standard fixed wall mount free of charge.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Sandeep Menon",
+        "daysAgo": 6,
+        "helpful": 71,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.06,
+        "aspects": [
+          {
+            "name": "picture quality",
+            "sentiment": "positive",
+            "confidence": 0.95
+          },
+          {
+            "name": "value",
+            "sentiment": "positive",
+            "confidence": 0.94
+          },
+          {
+            "name": "installation",
+            "sentiment": "positive",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Filmmaker Mode, webOS 23, and free LG wall-mount installation"
+        ]
+      },
+      {
+        "title": "Good everyday 4K TV, note that Magic Remote is sold separately (~₹2,300)",
+        "text": "TV supports LG's pointer/voice Magic Remote MR23GA, EXCEPT the UR7500 box ships with a basic button IR remote—you have to point directly at the bottom sensor or use the LG ThinQ phone app.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Bhavna Kulkarni",
+        "daysAgo": 11,
+        "helpful": 64,
+        "sentiment": "positive",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "picture quality",
+            "sentiment": "positive",
+            "confidence": 0.89
+          },
+          {
+            "name": "accessories",
+            "sentiment": "negative",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Crucial UR7500 unbundled MR23GA Magic Remote buyer heads-up"
+        ]
+      },
+      {
+        "title": "webOS 23 home screen shows banner ads & lacks Play Store apps like Kodi",
+        "text": "Top half of the webOS home dashboard displays sponsored banners unless you toggle off 'Home Promotion' deep in General settings, and unlike Google TV you cannot sideload Android APKs.",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "tarun_stream",
+        "daysAgo": 18,
+        "helpful": 39,
+        "sentiment": "neutral",
+        "confidence": 0.9,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "software",
+            "sentiment": "negative",
+            "confidence": 0.93
+          }
+        ],
+        "signals": [
+          "webOS 23 'Home Promotion' toggle & closed app store limitation"
+        ]
+      },
+      {
+        "title": "AI Sound Pro sounds hollow above volume 35 & only 1 USB port on rear",
+        "text": "Enabling AI Sound Pro virtual 5.1 adds metallic echo to news anchors—standard Clear Voice mode is much better. Also has just 3 HDMI and 1 single USB 2.0 port.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Gopal_R",
+        "daysAgo": 26,
+        "helpful": 24,
+        "sentiment": "negative",
+        "confidence": 0.9,
+        "geminiRisk": 0.08,
+        "aspects": [
+          {
+            "name": "sound quality",
+            "sentiment": "negative",
+            "confidence": 0.93
+          },
+          {
+            "name": "connectivity",
+            "sentiment": "negative",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "AI Sound Pro metallic echo vs Clear Voice + single USB port"
+        ]
+      },
+      {
+        "title": "Clicked 1 star mistakenly — Game Optimizer ALLM works great with PS5!",
+        "text": "Sorry, tapped 1 star on phone! Input lag in Game Optimizer mode feels super responsive for FIFA and Spider-Man 2.",
+        "rating": 1,
+        "verified": true,
+        "reviewer": "Nikhil_PS5",
+        "daysAgo": 13,
+        "helpful": 12,
+        "sentiment": "positive",
+        "confidence": 0.95,
+        "geminiRisk": 0.12,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.94
+          }
+        ],
+        "signals": [
+          "1★ rating contradicts positive PS5 Game Optimizer review"
+        ]
+      },
+      {
+        "title": "Nice tv good product best lg 43 inch tv five stars must buy!",
+        "text": "Very good nice tv awesome picture quality value for money go for it five stars!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "DealKing_IN",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.94,
+        "geminiRisk": 0.89,
+        "aspects": [
+          {
+            "name": "picture quality",
+            "sentiment": "positive",
+            "confidence": 0.6
+          }
+        ],
+        "signals": [
+          "Generic stock praise",
+          "Unverified purchase"
+        ]
+      }
+    ],
+    "B0CRF6NJC3": [
+      {
+        "title": "Zero razor burn or ingrown hairs on sensitive neck skin — wet or dry!",
+        "text": "Cartridge razors always gave me red bumps under the jawline; OneBlade trims down to a 0.2mm clean shadow dry in front of the mirror in 3 minutes with zero nicks, and rinses straight under the tap.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Aditya Chaturvedi",
+        "daysAgo": 3,
+        "helpful": 95,
+        "sentiment": "positive",
+        "confidence": 0.97,
+        "geminiRisk": 0.05,
+        "aspects": [
+          {
+            "name": "comfort",
+            "sentiment": "positive",
+            "confidence": 0.98
+          },
+          {
+            "name": "ease of cleaning",
+            "sentiment": "positive",
+            "confidence": 0.95
+          }
+        ],
+        "signals": [
+          "Zero neck razor burn, 0.2mm shadow trim, and IPX7 tap rinse"
+        ]
+      },
+      {
+        "title": "Sharp edging & USB-A cable convenience, factor in ₹1,000 blade refills",
+        "text": "1mm and 3mm click-on stubble combs keep beard lines crisp, and switching from Philips' old wall plug to a USB-A charging cable helps during travel. Replacement QP210/QP220 blades cost ~₹950–₹1,100 every 4 months.",
+        "rating": 4,
+        "verified": true,
+        "reviewer": "Manish_B",
+        "daysAgo": 10,
+        "helpful": 53,
+        "sentiment": "positive",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "positive",
+            "confidence": 0.92
+          },
+          {
+            "name": "charging",
+            "sentiment": "positive",
+            "confidence": 0.89
+          },
+          {
+            "name": "value",
+            "sentiment": "neutral",
+            "confidence": 0.88
+          }
+        ],
+        "signals": [
+          "USB-A travel cable + ₹950-1100 4-month blade replacement math"
+        ]
+      },
+      {
+        "title": "Slow 8-hour NiMH charge with NO battery indicator light on handle!",
+        "text": "QP2724 uses an 8-hour NiMH battery for 45 mins runtime, CANNOT be used corded while plugged in, and doesn't even have an LED on the body to tell you whether it is low or finished charging!",
+        "rating": 3,
+        "verified": true,
+        "reviewer": "Prashant_G",
+        "daysAgo": 17,
+        "helpful": 61,
+        "sentiment": "negative",
+        "confidence": 0.91,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "charging",
+            "sentiment": "negative",
+            "confidence": 0.96
+          },
+          {
+            "name": "battery",
+            "sentiment": "negative",
+            "confidence": 0.91
+          }
+        ],
+        "signals": [
+          "Exact QP2724 8h NiMH, no corded use, and missing battery LED"
+        ]
+      },
+      {
+        "title": "Fragile blade neck snaps if dropped onto bathroom tiles even once",
+        "text": "Slipped off the washbasin edge—the trimmer handle survived fine, but the thin plastic tabs holding the ₹1,050 stainless blade head snapped instantly. Always keep the green protective cap on.",
+        "rating": 2,
+        "verified": true,
+        "reviewer": "Sumeet_K",
+        "daysAgo": 25,
+        "helpful": 38,
+        "sentiment": "negative",
+        "confidence": 0.92,
+        "geminiRisk": 0.07,
+        "aspects": [
+          {
+            "name": "durability",
+            "sentiment": "negative",
+            "confidence": 0.96
+          }
+        ],
+        "signals": [
+          "Known OneBlade fragile plastic neck tab drop failure"
+        ]
+      },
+      {
+        "title": "5 stars clicked wrongly — leaves faint stubble if your office mandates baby-smooth shave",
+        "text": "Selected 5 stars by mistake; great for 1mm stubble, but if your hospitality/airline job requires a 0.0mm DE-razor glass-smooth shave, you still feel fine sandpaper against the grain.",
+        "rating": 5,
+        "verified": true,
+        "reviewer": "Capt_Rohan",
+        "daysAgo": 13,
+        "helpful": 17,
+        "sentiment": "neutral",
+        "confidence": 0.89,
+        "geminiRisk": 0.13,
+        "aspects": [
+          {
+            "name": "performance",
+            "sentiment": "neutral",
+            "confidence": 0.9
+          }
+        ],
+        "signals": [
+          "5★ rating mismatches airline/hospitality closeness caveat"
+        ]
+      },
+      {
+        "title": "BEST TRIMMER IN INDIA SUPERB PHILIPS MUST BUY FIVE STARS!!!!",
+        "text": "AWESOME ONEBLADE BEST EVER VALUE FOR MONEY JUST BUY IT DONT MISS 100% GENUINE FIVE STARS!!!",
+        "rating": 5,
+        "verified": false,
+        "reviewer": "CashbackHunter99",
+        "daysAgo": 2,
+        "helpful": 0,
+        "sentiment": "positive",
+        "confidence": 0.96,
+        "geminiRisk": 0.91,
+        "aspects": [],
+        "signals": [
+          "All-caps stock hype",
+          "Unverified purchase"
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,0 @@
-{
-  "_readme": "Approved dataset of amazon.in product records you are allowed to use (licensed export, authorized API snapshot, etc). Each record's 'asin' must be a REAL ASIN from that source. Leave 'records' empty rather than guessing. Do not paste data from untrusted sources here.",
-  "capturedAt": null,
-  "records": []
-}

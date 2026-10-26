@@ -1,0 +1,6 @@
+{
+  "name": "ReviewLens",
+  "description": "Amazon India product & review acquisition, verification, and Gemini-powered review analysis.",
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
